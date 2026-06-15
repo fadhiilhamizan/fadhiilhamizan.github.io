@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fadhiil Akmal Hamizan | Tech Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #020617;
+            --bg-card: rgba(30, 41, 59, 0.6);
+            --bg-card-hover: rgba(30, 41, 59, 0.9);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #0ea5e9;
+            --primary-glow: rgba(14, 165, 233, 0.6);
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --border: rgba(255, 255, 255, 0.1);
+            --radius-lg: 24px;
+            --radius-md: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Grid Background Pattern */
+        .grid-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        /* Fluid Background Orbs (Lebih Ramai) */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -1;
+            opacity: 0.25;
+            animation: float 12s infinite alternate ease-in-out;
+        }
+
+        .orb-1 { width: 500px; height: 500px; background: var(--primary); top: -5%; left: -10%; }
+        .orb-2 { width: 600px; height: 600px; background: var(--secondary); bottom: 10%; right: -10%; animation-delay: -4s; }
+        .orb-3 { width: 400px; height: 400px; background: var(--accent); top: 40%; left: 30%; animation-delay: -8s; opacity: 0.15; }
+        .orb-4 { width: 350px; height: 350px; background: var(--success); top: 70%; left: -5%; animation-delay: -2s; opacity: 0.15; }
+        .orb-5 { width: 450px; height: 450px; background: var(--warning); top: 20%; right: 10%; animation-delay: -6s; opacity: 0.15; }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(40px, -30px) scale(1.1); }
+            100% { transform: translate(-20px, 50px) scale(0.9); }
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background: 
+                radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px) 0 0,
+                radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px) 50px 50px;
+            background-size: 100px 100px;
+            animation: moveParticles 20s linear infinite;
+        }
+
+        @keyframes moveParticles {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100px); }
+        }
+
+        /* Scroll Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            padding: 1.2rem 5%;
+            background: rgba(2, 6, 23, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--text-main), var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            text-shadow: 0 0 20px rgba(255,255,255,0.1);
+        }
+
+        .logo span {
+            color: var(--primary);
+            -webkit-text-fill-color: var(--primary);
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-left: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            text-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        /* Hero Section */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            background: linear-gradient(90deg, rgba(14, 165, 233, 0.1), rgba(139, 92, 246, 0.1));
+            color: var(--text-main);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            backdrop-filter: blur(10px);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.2);
+            animation: pulse-border 2s infinite;
+        }
+
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(14, 165, 233, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0); }
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1.5px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-shift 5s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 750px;
+            margin-bottom: 3.5rem;
+            line-height: 1.9;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: rgba(255,255,255,0.2);
+            transform: rotate(45deg) translateY(-100%);
+            transition: transform 0.6s;
+        }
+
+        .btn-primary:hover::after {
+            transform: rotate(45deg) translateY(100%);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.5);
+        }
+
+        /* Sections */
+        section {
+            padding: 8rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+            text-align: left;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+            background: linear-gradient(90deg, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            color: var(--primary);
+            font-size: 1.15rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Grid & Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.8));
+            border: 1px solid var(--border);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle at center, rgba(14, 165, 233, 0.15), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease, transform 0.6s ease;
+            transform: scale(0.5);
+            pointer-events: none;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(14, 165, 233, 0.4);
+            box-shadow: 0 20px 40px rgba(14, 165, 233, 0.2), 0 0 20px rgba(139, 92, 246, 0.1) inset;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            position: relative;
+            z-index: 1;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+            flex-grow: 1;
+        }
+
+        /* Tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tag {
+            background: rgba(14, 165, 233, 0.1);
+            border: 1px solid rgba(14, 165, 233, 0.2);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .card:hover .tag {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(14, 165, 233, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 0.8rem 1.6rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .skill-item img, .skill-item svg {
+            width: 24px;
+            height: 24px;
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover {
+            border-color: var(--primary);
+            background: rgba(14, 165, 233, 0.15);
+            color: #fff;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.3);
+        }
+
+        .skill-item:hover img, .skill-item:hover svg {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 5rem 5% 3rem;
+            text-align: center;
+            margin-top: 4rem;
+            background: linear-gradient(to bottom, transparent, rgba(2, 6, 23, 0.95));
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .social-icon:hover {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            transform: translateY(-6px) scale(1.1);
+            box-shadow: 0 15px 30px rgba(139, 92, 246, 0.4);
+            border-color: transparent;
+        }
+
+        .social-icon svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            h1 { font-size: 2.5rem; }
+            section { padding: 5rem 5%; }
+            .orb { opacity: 0.15; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-bg"></div>
+    <div class="particles"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+    <div class="orb orb-5"></div>
+
+    <nav>
+        <a href="#" class="logo">Fadhiil<span>.dev</span></a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="reveal">
+        <div class="hero-badge">Information System Major | ITS</div>
+        <h1>Fadhiil Akmal Hamizan <br><span>Tech & Problem Solver</span></h1>
+        <p class="subtitle">
+            Mahasiswa Sistem Informasi di Institut Teknologi Sepuluh Nopember. Berkomitmen pada pemanfaatan teknologi untuk memecahkan masalah kompleks dan mengorkestrasi analisis data guna menghasilkan wawasan teknis yang dapat ditindaklanjuti.
+        </p>
+        <a href="#projects" class="btn-primary">Jelajahi Portofolio</a>
+    </header>
+
+    <section id="about">
+        <div class="section-header reveal">
+            <h2 class="section-title">Tech Stack & Tools</h2>
+            <p class="section-subtitle">Ekosistem teknologi dan kerangka kerja yang saya kuasai.</p>
+        </div>
+        
+        <div style="margin-bottom: 4rem;" class="reveal">
+            <h3 style="margin-bottom: 1.5rem; font-weight: 700; font-size: 1.3rem; color: #fff; text-transform: uppercase; letter-spacing: 1px;">Programming Languages</h3>
+            <div class="skills-container">
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java">
+                    Java
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript">
+                    JavaScript
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML">
+                    HTML
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS">
+                    CSS
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python">
+                    Python
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#">
+                    C#
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg" alt="LUA">
+                    LUA
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP">
+                    PHP
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL">
+                    SQL
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" alt="R">
+                    R
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal">
+            <h3 style="margin-bottom: 1.5rem; font-weight: 700; font-size: 1.3rem; color: #fff; text-transform: uppercase; letter-spacing: 1px;">Analytics & Design Tools</h3>
+            <div class="skills-container">
+                <div class="skill-item">
+                    <img src="https://cdn.simpleicons.org/tableau/E22427" alt="Tableau">
+                    Tableau
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.simpleicons.org/powerbi/F2C811" alt="Power BI">
+                    Power BI
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Excel">
+                    Excel
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.simpleicons.org/googlesheets/34A853" alt="Google Sheets">
+                    Google Sheets
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma">
+                    Figma
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.simpleicons.org/canva/00C4CC" alt="Canva">
+                    Canva
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.simpleicons.org/capcut/FFFFFF" alt="Capcut">
+                    Capcut
+                </div>
+                <div class="skill-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/>
+                        <path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"/>
+                    </svg>
+                    Ibis Paint
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-header reveal">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Rangkaian proyek rekayasa perangkat lunak dan desain interaktif pilihan.</p>
+        </div>
+        
+        <div class="grid">
+            <div class="card reveal">
+                <h3>Bookuy Web Platform (2025)</h3>
+                <p>Membangun platform marketplace dan penyewaan buku digital berbasis mahasiswa. Mengimplementasikan arsitektur Laravel 12 dan PHP 8.2 untuk merampingkan proses transaksi secara efisien.</p>
+                <div class="tags">
+                    <span class="tag">Laravel 12</span>
+                    <span class="tag">PHP 8.2</span>
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <h3>Game Development: ISCOM & GEMASTIK (2024)</h3>
+                <p>Meraih Juara 1 dalam kategori Game Application Development di Information System Competition (ISCOM) 2024. Proyek ini juga diakui sebagai Finalis Internal ITS pada ajang GEMASTIK 2024 berkat pendekatan pemecahan masalah yang inovatif.</p>
+                <div class="tags">
+                    <span class="tag">Game Development</span>
+                    <span class="tag">Algorithmic Logic</span>
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <h3>LoopLook UI/UX Design (2023)</h3>
+                <p>Merancang dan mengembangkan purwarupa antarmuka pengguna (UI) awal untuk aplikasi daur ulang pakaian berkelanjutan (sustainable clothing recycling application), berfokus pada aksesibilitas dan alur pengguna yang intuitif.</p>
+                <div class="tags">
+                    <span class="tag">Figma</span>
+                    <span class="tag">Prototyping</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="section-header reveal">
+            <h2 class="section-title">Tech Experience</h2>
+            <p class="section-subtitle">Keterlibatan operasional dan manajerial pada ekosistem komunitas teknologi.</p>
+        </div>
+        <div class="grid">
+            <div class="card reveal">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 10px;">
+                    <h3 style="margin: 0; font-size: 1.5rem;">ISE! BIONIX (Business and IT Olympiad)</h3>
+                    <span style="background: rgba(14, 165, 233, 0.15); border: 1px solid rgba(14, 165, 233, 0.3); padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; color: #fff;">2024 - 2025</span>
+                </div>
+                <p>Berperan secara intensif dalam Information Systems Expo (ISE!) BIONIX, sebuah olimpiade bisnis dan IT bergengsi. Mengawali kontribusi sebagai Staff BIONIX dan Staff Volunteer pada tahun 2024, kemudian dipercaya untuk menjabat sebagai Expert Staff BIONIX pada tahun 2025 yang diselenggarakan oleh institusi ITS.</p>
+            </div>
+            
+            <div class="card reveal">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 10px;">
+                    <h3 style="margin: 0; font-size: 1.5rem;">Google Developer Student Clubs (GDSC) ITS</h3>
+                    <span style="background: rgba(139, 92, 246, 0.15); border: 1px solid rgba(139, 92, 246, 0.3); padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; color: #fff;">2023</span>
+                </div>
+                <p>Terdaftar dan secara aktif ikut serta sebagai Anggota dalam organisasi Google Developer Student Clubs (GDSC) di kampus ITS pada tahun 2023, berkolaborasi dengan mahasiswa lainnya guna mengembangkan kompetensi di bidang teknologi dan piranti lunak Google.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="reveal">
+        <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: -0.5px; text-shadow: 0 5px 15px rgba(0,0,0,0.3);">Mari Berkolaborasi</h2>
+        <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 3rem; max-width: 550px; margin-left: auto; margin-right: auto; line-height: 1.8;">
+            Tertarik untuk berdiskusi lebih lanjut mengenai integrasi sistem, analisis data, atau kolaborasi strategis dalam lingkup IT?
+        </p>
+        <div class="social-links">
+            <a href="mailto:fadhiilhamizan2004@gmail.com" class="social-icon" aria-label="Email" title="Email">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+            </a>
+            <a href="https://github.com/fadhiilhamizan" target="_blank" class="social-icon" aria-label="GitHub" title="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                    <path d="M9 18c-4.51 2-5-2-7-2"/>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/fadhiil-akmal-hamizan/" target="_blank" class="social-icon" aria-label="LinkedIn" title="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect width="4" height="12" x="2" y="9"/>
+                    <circle cx="4" cy="4" r="2"/>
+                </svg>
+            </a>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 2rem; opacity: 0.6; font-weight: 500;">
+            &copy; 2026 Fadhiil Akmal Hamizan. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Memicu animasi saat halaman pertama kali dimuat
+    </script>
+</body>
+</html>
