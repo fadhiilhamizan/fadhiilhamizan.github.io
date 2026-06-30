@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case study — Fadhiil Akmal Hamizan</title>
+  <meta name="description" content="Project case study — Fadhiil Akmal Hamizan." />
+  <meta name="theme-color" content="#060611" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7ef8'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='26' fill='url(%23g)'/%3E%3Ctext x='50' y='70' font-family='Arial' font-size='58' font-weight='bold' text-anchor='middle' fill='white'%3EF%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var sys = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', saved || sys);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <div class="aurora" aria-hidden="true">
+    <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div><div class="orb orb-4"></div><div class="orb orb-5"></div>
+  </div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Fadhiil<em>.dev</em></a>
+    <div class="nav-right">
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language / Ganti bahasa" title="EN / ID">
+        <span data-lang="en" class="on">EN</span><span class="sep">/</span><span data-lang="id">ID</span>
+      </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" title="Toggle theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="index.html#projects" class="nav-cta" data-en="All projects" data-id="Semua proyek">All projects</a>
+    </div>
+  </nav>
+
+  <main class="cs-main" id="cs"><!-- rendered by script --></main>
+
+  <footer class="wrap">
+    <div class="footer-text" data-html data-en="© 2026 Fadhiil Akmal Hamizan · Built with <em>♥</em> and liquid glass" data-id="© 2026 Fadhiil Akmal Hamizan · Dibuat dengan <em>♥</em> dan liquid glass">© 2026 Fadhiil Akmal Hamizan · Built with <em>♥</em> and liquid glass</div>
+    <a href="index.html" class="to-top"><span data-en="Back to home" data-id="Kembali ke beranda">Back to home</span></a>
+  </footer>
+
+  <!-- Case-study content + renderer (runs before deferred site.js) -->
+  <script>
+  (function () {
+    var ORDER = ['atmosfer', 'naufragus', 'bookuy', 'ublock', 'gemastik', 'looplook', 'gdsc'];
+    var L = {
+      details: { en: 'Details', id: 'Detail' },
+      role:    { en: 'Role', id: 'Peran' },
+      year:    { en: 'Year', id: 'Tahun' },
+      team:    { en: 'Team', id: 'Tim' },
+      award:   { en: 'Award', id: 'Penghargaan' },
+      stack:   { en: 'Stack', id: 'Teknologi' },
+      next:    { en: 'Next project', id: 'Proyek berikutnya' },
+      open:    { en: 'Open', id: 'Buka' },
+      back:    { en: 'Back to portfolio', id: 'Kembali ke portfolio' },
+      nf:      { en: 'Project not found.', id: 'Proyek tidak ditemukan.' }
+    };
+
+    var CS = {
+      atmosfer: {
+        title: 'Atmosfer', theme: 'sky',
+        kicker: { en: 'Full-stack web app · 2026', id: 'Aplikasi web full-stack · 2026' },
+        tagline: { en: 'A weather dashboard whose sky changes to match the forecast.', id: 'Dasbor cuaca yang langitnya berubah mengikuti ramalan.' },
+        role: { en: 'Solo full-stack build', id: 'Proyek full-stack solo' },
+        year: '2026',
+        stack: ['React', 'Vite', 'Node.js', 'Express', 'Tailwind CSS', 'Leaflet', 'PWA'],
+        links: [{ label: { en: 'View on GitHub', id: 'Lihat di GitHub' }, href: 'https://github.com/fadhiilhamizan/weather-dashboard', primary: true }],
+        sections: [
+          { h: { en: 'Overview', id: 'Ringkasan' }, body: [
+            { p: { en: 'Atmosfer is a full-stack weather app built around three ideas: keep secrets off the client, cache aggressively, and let the interface react to the weather itself. Search any city or use your location for current conditions, a 24-hour hourly strip, and a 7-day outlook — and watch the whole UI re-tint to the real sky and time of day at that place.',
+                    id: 'Atmosfer adalah aplikasi cuaca full-stack yang dibangun di atas tiga gagasan: jauhkan rahasia dari klien, cache secara agresif, dan biarkan antarmuka bereaksi terhadap cuaca itu sendiri. Cari kota mana pun atau pakai lokasimu untuk kondisi terkini, strip per jam 24 jam, dan ramalan 7 hari — lalu lihat seluruh UI berubah warna mengikuti langit dan waktu setempat.' } }
+          ]},
+          { h: { en: 'The challenge', id: 'Tantangan' }, body: [
+            { p: { en: 'Calling a weather API straight from the browser is the most common mistake in this kind of project: the API key gets exposed, free-tier quotas burn out fast, and the UI ends up tightly coupled to a messy vendor payload.',
+                    id: 'Memanggil API cuaca langsung dari peramban adalah kesalahan paling umum di proyek seperti ini: API key terekspos, kuota tier gratis cepat habis, dan UI jadi terikat erat pada payload vendor yang berantakan.' } }
+          ]},
+          { h: { en: 'What I built', id: 'Yang saya bangun' }, body: [
+            { list: [
+              { en: 'A backend proxy (Express) that holds the API key, caches responses with a TTL, and rate-limits per IP.', id: 'Backend proxy (Express) yang menyimpan API key, men-cache respons dengan TTL, dan membatasi laju per IP.' },
+              { en: 'An anti-corruption transform layer that normalizes provider data into one clean, predictable contract.', id: 'Lapisan transform anti-korupsi yang menormalkan data penyedia menjadi satu kontrak yang rapi dan dapat diprediksi.' },
+              { en: 'A living "sky" theming engine that derives the palette from the condition code and whether it is day or night.', id: 'Mesin tema "langit" hidup yang menurunkan palet dari kode kondisi serta siang atau malam.' },
+              { en: 'Dependency-free interactive SVG charts (temperature / precipitation / wind) with hover tooltips.', id: 'Grafik SVG interaktif tanpa dependensi (suhu / presipitasi / angin) dengan tooltip hover.' },
+              { en: 'A Leaflet radar map with a RainViewer overlay, code-split so it never bloats the main bundle.', id: 'Peta radar Leaflet dengan overlay RainViewer, dipisah kode agar tak membebani bundel utama.' },
+              { en: 'An installable PWA that keeps the last forecast available offline, with full reduced-motion support.', id: 'PWA terinstal yang menyimpan ramalan terakhir secara offline, dengan dukungan reduced-motion penuh.' }
+            ]}
+          ]},
+          { h: { en: 'Tech & decisions', id: 'Teknologi & keputusan' }, body: [
+            { p: { en: 'React + Vite for the dashboard UI; Node and Express for the proxy; an in-memory TTL cache behind a small interface so it can be swapped for Redis without touching callers. Open-Meteo is the default provider (no key required), with OpenWeather and an offline demo mode flowing through the same transform — so the UI cannot tell them apart.',
+                    id: 'React + Vite untuk UI dasbor; Node dan Express untuk proxy; cache TTL in-memory di balik antarmuka kecil sehingga bisa diganti Redis tanpa menyentuh pemanggil. Open-Meteo jadi penyedia default (tanpa key), dengan OpenWeather dan mode demo offline melewati transform yang sama — sehingga UI tak bisa membedakannya.' } },
+            { callout: { en: 'The subject of the app is the changing sky — so the interface is one too.', id: 'Subjek aplikasinya adalah langit yang berubah — maka antarmukanya pun ikut berubah.' } }
+          ]},
+          { h: { en: 'Outcome', id: 'Hasil' }, body: [
+            { p: { en: 'Atmosfer is my flagship portfolio project: it demonstrates third-party API integration, application state management, a real caching strategy, and proper secret handling — end to end.',
+                    id: 'Atmosfer adalah proyek unggulan portfolio saya: menunjukkan integrasi API pihak ketiga, manajemen state aplikasi, strategi caching nyata, dan penanganan rahasia yang benar — dari hulu ke hilir.' } }
+          ]}
+        ]
+      },
+
+      naufragus: {
+        title: 'Naufragus', theme: 'ocean',
+        kicker: { en: 'Game · ISCOM 2024 · 1st place', id: 'Game · ISCOM 2024 · Juara 1' },
+        tagline: { en: 'An underwater adventure that teaches kids to save the ocean.', id: 'Petualangan bawah laut yang mengajak anak menjaga lautan.' },
+        role: { en: 'Game designer & developer · Team 54', id: 'Desainer & pengembang game · Tim 54' },
+        year: '2024',
+        team: { en: 'Fadhiil Akmal Hamizan, Jeremy Anggi, Sultan Alamsyah Lintang Mubarok', id: 'Fadhiil Akmal Hamizan, Jeremy Anggi, Sultan Alamsyah Lintang Mubarok' },
+        award: { en: '🥇 1st place — Game App Development', id: '🥇 Juara 1 — Pengembangan Aplikasi Game' },
+        stack: ['Roblox Studio', 'Lua', 'Canva', '3D Modeling', 'Game Design'],
+        sections: [
+          { h: { en: 'Overview', id: 'Ringkasan' }, body: [
+            { p: { en: 'Naufragus (Latin for shipwrecked) is a single-player underwater adventure built in Roblox Studio for the ISCOM 2024 Game Application Development category — which it won. It blends exploration, education, and conservation for players aged 7–15.',
+                    id: 'Naufragus (bahasa Latin untuk terdampar) adalah petualangan bawah laut pemain tunggal yang dibangun di Roblox Studio untuk kategori Pengembangan Aplikasi Game ISCOM 2024 — dan memenangkannya. Game ini memadukan eksplorasi, edukasi, dan konservasi untuk pemain usia 7–15 tahun.' } }
+          ]},
+          { h: { en: 'The story', id: 'Cerita' }, body: [
+            { p: { en: 'You play someone with a careless habit of throwing trash into the sea. One day a strong current sweeps you to the bottom of the ocean, trapped in an underwater dimension. To return to the surface you explore, clean up the very trash you once dumped, and rescue the creatures it harmed — discovering how beautiful, and how fragile, the marine ecosystem really is.',
+                    id: 'Kamu memerankan seseorang yang punya kebiasaan buruk membuang sampah ke laut. Suatu hari arus kuat menyapumu ke dasar lautan, terjebak di sebuah dimensi bawah laut. Untuk kembali ke permukaan, kamu menjelajah, membersihkan sampah yang dulu kamu buang, dan menyelamatkan hewan yang terdampak — sambil menemukan betapa indah, sekaligus rapuhnya, ekosistem laut.' } }
+          ]},
+          { h: { en: 'Why it matters', id: 'Mengapa ini penting' }, body: [
+            { p: { en: 'Indonesia is the world’s largest archipelago — roughly 81,000 km of coastline, home to about 8,500 fish species and 950 coral-reef biota. Yet it is also the world’s second-largest plastic polluter, generating 12.5 million tonnes of plastic waste in 2022. Naufragus turns those statistics into something a child can feel and act on.',
+                    id: 'Indonesia adalah negara kepulauan terbesar di dunia — sekitar 81.000 km garis pantai, rumah bagi kurang lebih 8.500 spesies ikan dan 950 biota terumbu karang. Namun ia juga penyumbang sampah plastik terbesar kedua di dunia, dengan 12,5 juta ton sampah plastik pada 2022. Naufragus mengubah statistik itu menjadi sesuatu yang bisa dirasakan dan ditindaklanjuti oleh anak-anak.' } }
+          ]},
+          { h: { en: 'Gameplay & mechanics', id: 'Gameplay & mekanik' }, body: [
+            { list: [
+              { en: 'Clean up trash scattered through the world (press E on PC, or an on-screen button on mobile).', id: 'Bersihkan sampah yang tersebar di dunia game (tekan E di PC, atau tombol di layar pada ponsel).' },
+              { en: 'Rescue trapped sea animals — like a jellyfish tangled in plastic.', id: 'Selamatkan hewan laut yang terjebak — seperti ubur-ubur yang terjerat plastik.' },
+              { en: 'Simple parkour obstacles and environmental puzzles gate your progress.', id: 'Rintangan parkour sederhana dan teka-teki lingkungan menghalangi kemajuanmu.' },
+              { en: 'Move with WASD + jump on PC, or a joystick and jump button on mobile.', id: 'Bergerak dengan WASD + lompat di PC, atau joystick dan tombol lompat di ponsel.' },
+              { en: 'The deeper you go, the more the story unfolds.', id: 'Makin dalam kamu menyelam, makin berkembang ceritanya.' }
+            ]}
+          ]},
+          { h: { en: 'How we built it', id: 'Cara kami membangunnya' }, body: [
+            { p: { en: 'Built in Roblox Studio with custom 3D models and Lua scripting for the mechanics; art and UI produced in Canva. We ran the full cycle — planning, concept design, prototyping, implementation, playtesting with real testers, then release — iterating hard on feedback to keep it fun, educational, and bug-free.',
+                    id: 'Dibangun di Roblox Studio dengan model 3D buatan sendiri dan skrip Lua untuk mekaniknya; aset dan UI dibuat di Canva. Kami menjalankan siklus penuh — perencanaan, desain konsep, prototipe, implementasi, uji main dengan tester nyata, lalu rilis — beriterasi serius atas masukan agar tetap seru, mendidik, dan bebas bug.' } },
+            { callout: { en: '1st place, Game Application Development — ISCOM 2024.', id: 'Juara 1, Pengembangan Aplikasi Game — ISCOM 2024.' } }
+          ]},
+          { h: { en: 'My role', id: 'Peran saya' }, body: [
+            { p: { en: 'As part of Team 54, I worked across game design and development — shaping the concept and story, building mechanics and the 3D world, and polishing the moment-to-moment player experience.',
+                    id: 'Sebagai bagian dari Tim 54, saya bekerja lintas desain dan pengembangan game — membentuk konsep dan cerita, membangun mekanik dan dunia 3D, serta memoles pengalaman bermain dari waktu ke waktu.' } }
+          ]}
+        ]
+      },
+
+      bookuy: {
+        title: 'Bookuy', theme: 'violet',
+        kicker: { en: 'Web platform · 2025', id: 'Platform web · 2025' },
+        tagline: { en: 'A second-hand book marketplace and rental platform for students.', id: 'Marketplace dan platform penyewaan buku bekas untuk mahasiswa.' },
+        role: { en: 'Full-stack developer · capstone team of 6', id: 'Pengembang full-stack · tim capstone berisi 6 orang' },
+        year: '2025',
+        stack: ['Laravel 12', 'PHP 8.2', 'MySQL', 'Blade', 'Tailwind CSS'],
+        links: [{ label: { en: 'View on GitHub', id: 'Lihat di GitHub' }, href: 'https://github.com/fadhiilhamizan/Bookuy', primary: true }],
+        sections: [
+          { h: { en: 'Overview', id: 'Ringkasan' }, body: [
+            { p: { en: 'Bookuy is a student-centric marketplace where you can buy, sell, and rent second-hand textbooks. It was built as a capstone project at ITS with a team of six.',
+                    id: 'Bookuy adalah marketplace untuk mahasiswa tempat kamu bisa membeli, menjual, dan menyewa buku teks bekas. Dibuat sebagai proyek capstone di ITS bersama tim berisi enam orang.' } }
+          ]},
+          { h: { en: 'Features', id: 'Fitur' }, body: [
+            { list: [
+              { en: 'Buy / sell listings with images and condition details.', id: 'Listing jual / beli dengan gambar dan detail kondisi.' },
+              { en: 'Semester-based rentals for textbooks you only need for a term.', id: 'Penyewaan per semester untuk buku yang hanya dibutuhkan satu periode.' },
+              { en: 'Smart filtering and search across the catalogue.', id: 'Filter dan pencarian cerdas di seluruh katalog.' },
+              { en: 'Cart, checkout, and a seller reputation system.', id: 'Keranjang, checkout, dan sistem reputasi penjual.' }
+            ]}
+          ]},
+          { h: { en: 'Tech & teamwork', id: 'Teknologi & kerja tim' }, body: [
+            { p: { en: 'A Laravel 12 / PHP 8.2 backend with Blade templating, a MySQL database, and Tailwind for styling. The six of us coordinated with Git and split work across listings, rentals, auth, and the storefront.',
+                    id: 'Backend Laravel 12 / PHP 8.2 dengan templating Blade, basis data MySQL, dan Tailwind untuk styling. Kami berenam berkoordinasi lewat Git dan membagi pekerjaan pada listing, penyewaan, autentikasi, dan etalase.' } }
+          ]},
+          { h: { en: 'What I learned', id: 'Yang saya pelajari' }, body: [
+            { p: { en: 'Shipping a real, multi-role web app as a team: data modeling for listings and rentals, authentication, and the discipline of keeping work mergeable across collaborators.',
+                    id: 'Merilis aplikasi web multi-peran yang nyata sebagai tim: pemodelan data untuk listing dan penyewaan, autentikasi, serta disiplin menjaga pekerjaan tetap bisa di-merge antar kolaborator.' } }
+          ]}
+        ]
+      },
+
+      ublock: {
+        title: 'uBlock Ad-Block', theme: 'pink',
+        kicker: { en: 'Open source · 2025', id: 'Open source · 2025' },
+        tagline: { en: 'A maintained fork of uBlock Origin, the efficient content blocker.', id: 'Fork terpelihara dari uBlock Origin, pemblokir konten yang efisien.' },
+        role: { en: 'Maintainer / contributor', id: 'Pemelihara / kontributor' },
+        year: '2025',
+        stack: ['JavaScript', 'WebAssembly', 'CSS', 'HTML', 'GPL-3.0'],
+        links: [{ label: { en: 'View on GitHub', id: 'Lihat di GitHub' }, href: 'https://github.com/fadhiilhamizan/uBlock-Browser-Ad-Block', primary: true }],
+        sections: [
+          { h: { en: 'Overview', id: 'Ringkasan' }, body: [
+            { p: { en: 'A forked and maintained build of uBlock Origin — the wide-spectrum, open-source content blocker for Chromium and Firefox.',
+                    id: 'Fork dan build terpelihara dari uBlock Origin — pemblokir konten open-source berspektrum luas untuk Chromium dan Firefox.' } }
+          ]},
+          { h: { en: 'What it does', id: 'Apa fungsinya' }, body: [
+            { list: [
+              { en: 'Blocks ads, trackers, and malware domains using community filter lists.', id: 'Memblokir iklan, pelacak, dan domain malware menggunakan filter list komunitas.' },
+              { en: 'Stays light on CPU and memory compared with most blockers.', id: 'Tetap ringan pada CPU dan memori dibanding kebanyakan pemblokir.' },
+              { en: 'Gives per-site controls and an element picker.', id: 'Menyediakan kontrol per situs dan element picker.' }
+            ]}
+          ]},
+          { h: { en: 'Why fork it', id: 'Mengapa mem-fork' }, body: [
+            { p: { en: 'To learn how a large, performance-critical browser extension is actually structured — the manifest, content scripts, and WebAssembly-accelerated filtering — and to keep a personal, current build I fully understand.',
+                    id: 'Untuk mempelajari bagaimana ekstensi peramban besar yang kritis terhadap performa benar-benar disusun — manifest, content script, dan penyaringan berakselerasi WebAssembly — sekaligus menjaga build pribadi yang terkini dan saya pahami sepenuhnya.' } },
+            { callout: { en: 'Respecting the original GPL-3.0 license — credit to Raymond Hill and the uBlock Origin contributors.', id: 'Menghormati lisensi asli GPL-3.0 — kredit untuk Raymond Hill dan para kontributor uBlock Origin.' } }
+          ]}
+        ]
+      },
+
+      gemastik: {
+        title: 'GEMASTIK Entry', theme: 'gold',
+        kicker: { en: 'Game · national competition · 2024', id: 'Game · kompetisi nasional · 2024' },
+        tagline: { en: 'Internal ITS finalist for the national GEMASTIK game competition.', id: 'Finalis internal ITS untuk kompetisi game nasional GEMASTIK.' },
+        role: { en: 'Game developer', id: 'Pengembang game' },
+        year: '2024',
+        stack: ['Game Dev', 'Interaction Design'],
+        sections: [
+          { h: { en: 'Overview', id: 'Ringkasan' }, body: [
+            { p: { en: 'A game project selected as an Internal ITS Finalist in the Game Application Development category of GEMASTIK — Indonesia’s premier national ICT student competition.',
+                    id: 'Proyek game yang terpilih sebagai Finalis Internal ITS di kategori Pengembangan Aplikasi Game GEMASTIK — kompetisi mahasiswa TIK nasional paling bergengsi di Indonesia.' } }
+          ]},
+          { h: { en: 'Significance', id: 'Makna' }, body: [
+            { p: { en: 'Being internally endorsed put the project among a small set chosen to represent ITS at the national level — a signal of consistent strength in game design and execution.',
+                    id: 'Mendapat endorsement internal menempatkan proyek ini di antara sedikit karya yang dipilih mewakili ITS di tingkat nasional — pertanda kekuatan yang konsisten dalam desain dan eksekusi game.' } }
+          ]}
+        ]
+      },
+
+      looplook: {
+        title: 'LoopLook', theme: 'cyan',
+        kicker: { en: 'UI/UX design · 2023', id: 'Desain UI/UX · 2023' },
+        tagline: { en: 'UI/UX prototype for a sustainable clothing-recycling app.', id: 'Prototipe UI/UX untuk aplikasi daur ulang pakaian berkelanjutan.' },
+        role: { en: 'UI/UX designer', id: 'Desainer UI/UX' },
+        year: '2023',
+        stack: ['Figma', 'Prototyping', 'User Research', 'Mobile-First'],
+        sections: [
+          { h: { en: 'Overview', id: 'Ringkasan' }, body: [
+            { p: { en: 'I designed the initial interface and interactive prototype for LoopLook, a mobile app that makes recycling and re-wearing clothing easy and rewarding.',
+                    id: 'Saya mendesain antarmuka awal dan prototipe interaktif untuk LoopLook, aplikasi mobile yang membuat daur ulang dan memakai ulang pakaian jadi mudah dan menyenangkan.' } }
+          ]},
+          { h: { en: 'Approach', id: 'Pendekatan' }, body: [
+            { p: { en: 'Mobile-first flows, accessible components, and a deliberate focus on reducing cognitive load — so the sustainable choice becomes the easy choice.',
+                    id: 'Alur mobile-first, komponen yang aksesibel, dan fokus sengaja pada pengurangan beban kognitif — agar pilihan berkelanjutan menjadi pilihan yang mudah.' } }
+          ]}
+        ]
+      },
+
+      gdsc: {
+        title: 'GDSC Contest', theme: 'violet',
+        kicker: { en: 'Competitive programming · 2024', id: 'Pemrograman kompetitif · 2024' },
+        tagline: { en: 'Algorithmic problem-solving among 150+ international competitors.', id: 'Pemecahan masalah algoritmik di antara 150+ peserta internasional.' },
+        role: { en: 'Contestant', id: 'Peserta' },
+        year: '2024',
+        stack: ['Algorithms', 'Data Structures', 'Problem Solving'],
+        sections: [
+          { h: { en: 'Overview', id: 'Ringkasan' }, body: [
+            { p: { en: 'I competed in the Google Developer Student Clubs programming competition, an internationally-attended event with over 150 participants.',
+                    id: 'Saya berkompetisi dalam ajang pemrograman Google Developer Student Clubs, acara berskala internasional dengan lebih dari 150 peserta.' } }
+          ]},
+          { h: { en: 'Takeaway', id: 'Pelajaran' }, body: [
+            { p: { en: 'Sharpened algorithmic thinking and speed under contest pressure, solving complex challenges across multiple rounds.',
+                    id: 'Mengasah pemikiran algoritmik dan kecepatan di bawah tekanan kompetisi, menyelesaikan tantangan kompleks di beberapa babak.' } }
+          ]}
+        ]
+      }
+    };
+
+    function getLang() { try { return localStorage.getItem('lang') || 'en'; } catch (e) { return 'en'; } }
+    function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+    function t(o, lang) { return o ? (o[lang] || o.en) : ''; }
+    function metaRow(k, v) { return '<div class="meta-row"><span class="meta-k">' + esc(k) + '</span><span class="meta-v">' + esc(v) + '</span></div>'; }
+
+    function render(lang) {
+      var id = (location.hash.slice(1) || new URLSearchParams(location.search).get('id') || 'atmosfer').toLowerCase();
+      var d = CS[id];
+      var root = document.getElementById('cs');
+      var back = '<a class="breadcrumb" href="index.html#projects"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>' + esc(t(L.back, lang)) + '</a>';
+      if (!d) { root.innerHTML = back + '<p style="color:var(--text-2);margin-top:1rem;">' + esc(t(L.nf, lang)) + '</p>'; return; }
+
+      document.title = d.title + ' — Fadhiil Akmal Hamizan';
+
+      var secHtml = d.sections.map(function (s) {
+        var inner = s.body.map(function (b) {
+          if (b.p) return '<p>' + esc(t(b.p, lang)) + '</p>';
+          if (b.list) return '<ul>' + b.list.map(function (li) { return '<li>' + esc(t(li, lang)) + '</li>'; }).join('') + '</ul>';
+          if (b.callout) return '<div class="cs-callout glass"><span class="q">&ldquo;</span>' + esc(t(b.callout, lang)) + '&rdquo;</div>';
+          return '';
+        }).join('');
+        return '<h2>' + esc(t(s.h, lang)) + '</h2>' + inner;
+      }).join('');
+
+      var rows = metaRow(t(L.role, lang), t(d.role, lang)) + metaRow(t(L.year, lang), d.year);
+      if (d.team) rows += metaRow(t(L.team, lang), t(d.team, lang));
+      if (d.award) rows += metaRow(t(L.award, lang), t(d.award, lang));
+      rows += metaRow(t(L.stack, lang), d.stack.join(' · '));
+
+      var linksHtml = (d.links || []).map(function (l) {
+        return '<a class="btn ' + (l.primary ? 'btn-primary' : 'btn-ghost') + '" href="' + l.href + '" target="_blank" rel="noopener">' + esc(t(l.label, lang)) + '</a>';
+      }).join('');
+
+      var extras = '';
+      if (d.theme === 'sky') extras = '<div class="ws-sun"></div><div class="ws-cloud c1"></div><div class="ws-cloud c2"></div>';
+      if (d.theme === 'ocean') extras = '<div class="ocean-ray" style="left:20%"></div><div class="ocean-ray" style="left:62%;animation-delay:-3s"></div><span class="sea-life" style="top:26%;left:16%">🐠</span><span class="sea-life" style="top:48%;left:74%;animation-delay:-2s">🪼</span>';
+
+      var idx = ORDER.indexOf(id);
+      var nextId = ORDER[(idx + 1) % ORDER.length];
+      var nd = CS[nextId];
+
+      root.innerHTML = back
+        + '<div class="cs-hero"><div class="cs-hero-bg ' + d.theme + '"></div>' + extras
+        + '<div class="cs-hero-inner"><div class="cs-kicker">' + esc(t(d.kicker, lang)) + '</div><h1 class="cs-title">' + esc(d.title) + '</h1><div class="cs-tagline">' + esc(t(d.tagline, lang)) + '</div></div></div>'
+        + '<div class="cs-layout"><div class="cs-body">' + secHtml + '</div>'
+        + '<aside class="cs-side"><div class="glass-card panel"><div class="panel-title">' + esc(t(L.details, lang)) + '</div>' + rows + '</div>'
+        + (linksHtml ? ('<div class="glass-card panel" style="gap:0.7rem;display:flex;flex-direction:column;">' + linksHtml + '</div>') : '') + '</aside></div>'
+        + '<a class="glass-card cs-next" href="project.html#' + nextId + '"><div><div class="label">' + esc(t(L.next, lang)) + '</div><div class="name">' + esc(nd.title) + ' →</div></div><span class="btn btn-ghost">' + esc(t(L.open, lang)) + '</span></a>';
+    }
+
+    render(getLang());
+    document.addEventListener('langchange', function (e) { render(e.detail.lang); });
+    window.addEventListener('hashchange', function () { render(getLang()); window.scrollTo(0, 0); });
+  })();
+  </script>
+  <script src="assets/site.js" defer></script>
+</body>
+</html>

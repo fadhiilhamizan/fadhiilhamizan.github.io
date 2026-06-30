@@ -1,1222 +1,221 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fadhiil Akmal Hamizan — Portfolio</title>
+  <title>Fadhiil Akmal Hamizan — Software · Data · Games</title>
+  <meta name="description" content="Fadhiil Akmal Hamizan — Information Systems student at ITS Surabaya. Full-stack developer, award-winning game maker, and open-source contributor. Building elegant tech from complex problems." />
+  <meta name="author" content="Fadhiil Akmal Hamizan" />
+  <meta name="theme-color" content="#060611" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Fadhiil Akmal Hamizan — Portfolio" />
+  <meta property="og:description" content="Full-stack developer · award-winning game maker · open-source contributor. ITS Surabaya." />
+  <meta property="og:url" content="https://fadhiilhamizan.github.io/" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7ef8'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='26' fill='url(%23g)'/%3E%3Ctext x='50' y='70' font-family='Arial' font-size='58' font-weight='bold' text-anchor='middle' fill='white'%3EF%3C/text%3E%3C/svg%3E" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --ink: #0a0a0f;
-      --ink-2: #1c1c28;
-      --ink-3: #2e2e40;
-      --mist: #f0eff8;
-      --mist-2: #e4e3f5;
-      --mist-3: #d4d2ee;
-      --accent: #5b4be8;
-      --accent-2: #8b7ef8;
-      --accent-pale: #eeecff;
-      --lime: #bef264;
-      --lime-dark: #4d7c0f;
-      --coral: #fb7185;
-      --coral-pale: #fff1f2;
-      --gold: #fbbf24;
-      --gold-pale: #fffbeb;
-      --text: #0a0a0f;
-      --text-2: #5a5a72;
-      --text-3: #9494b0;
-      --surface: #ffffff;
-      --surface-2: #f7f6fd;
-      --surface-3: #efeefd;
-      --border: rgba(90,90,114,0.12);
-      --border-strong: rgba(90,90,114,0.22);
-      --shadow: 0 2px 16px rgba(91,75,232,0.08);
-      --shadow-lift: 0 8px 32px rgba(91,75,232,0.14);
-      --radius: 16px;
-      --radius-sm: 8px;
-      --radius-pill: 999px;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --ink: #f0eff8;
-        --ink-2: #d4d2ee;
-        --ink-3: #b0aed8;
-        --mist: #13121e;
-        --mist-2: #1c1b2c;
-        --mist-3: #28273c;
-        --accent: #8b7ef8;
-        --accent-2: #a99ff9;
-        --accent-pale: #1e1c3a;
-        --lime: #bef264;
-        --lime-dark: #86efac;
-        --coral: #fb7185;
-        --coral-pale: #2c1318;
-        --gold: #fbbf24;
-        --gold-pale: #2c2208;
-        --text: #f0eff8;
-        --text-2: #b0aed8;
-        --text-3: #6e6e8e;
-        --surface: #1c1b2c;
-        --surface-2: #13121e;
-        --surface-3: #28273c;
-        --border: rgba(176,174,216,0.10);
-        --border-strong: rgba(176,174,216,0.20);
-        --shadow: 0 2px 16px rgba(0,0,0,0.4);
-        --shadow-lift: 0 8px 32px rgba(0,0,0,0.5);
-      }
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Space Grotesk', sans-serif;
-      background: var(--surface-2);
-      color: var(--text);
-      line-height: 1.65;
-      overflow-x: hidden;
-    }
-
-    /* ── NOISE TEXTURE ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 1000;
-      opacity: 0.4;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 5%;
-      height: 64px;
-      background: rgba(247,246,253,0.75);
-      backdrop-filter: blur(20px) saturate(180%);
-      -webkit-backdrop-filter: blur(20px) saturate(180%);
-      border-bottom: 1px solid var(--border);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      nav { background: rgba(28,27,44,0.8); }
-    }
-
-    .nav-logo {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 1.1rem;
-      color: var(--text);
-      text-decoration: none;
-      letter-spacing: -0.02em;
-    }
-
-    .nav-logo em {
-      color: var(--accent);
-      font-style: normal;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--text-2);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--accent); }
-
-    .nav-cta {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--surface);
-      background: var(--accent);
-      padding: 0.45rem 1.1rem;
-      border-radius: var(--radius-pill);
-      text-decoration: none;
-      transition: opacity 0.2s, transform 0.2s;
-    }
-
-    .nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      padding: 120px 8% 80px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      width: 700px;
-      height: 700px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(91,75,232,0.12) 0%, transparent 65%);
-      top: -200px;
-      right: -200px;
-      pointer-events: none;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--accent);
-      background: var(--accent-pale);
-      padding: 0.4rem 0.9rem;
-      border-radius: var(--radius-pill);
-      margin-bottom: 1.5rem;
-      letter-spacing: 0.04em;
-    }
-
-    .hero-eyebrow::before {
-      content: '';
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.7); }
-    }
-
-    .hero-title {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(2.6rem, 4.5vw, 4rem);
-      font-weight: 800;
-      line-height: 1.07;
-      letter-spacing: -0.03em;
-      margin-bottom: 1.5rem;
-      color: var(--text);
-    }
-
-    .hero-title .line-accent {
-      color: var(--accent);
-    }
-
-    .hero-title .line-outline {
-      -webkit-text-stroke: 2px var(--accent);
-      color: transparent;
-    }
-
-    .hero-desc {
-      font-size: 1.05rem;
-      color: var(--text-2);
-      max-width: 500px;
-      margin-bottom: 2.5rem;
-      line-height: 1.7;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.6rem;
-      border-radius: var(--radius-pill);
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.22s;
-      cursor: pointer;
-      border: none;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      box-shadow: 0 4px 20px rgba(91,75,232,0.35);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(91,75,232,0.45);
-    }
-
-    .btn-ghost {
-      background: var(--surface);
-      color: var(--text);
-      border: 1px solid var(--border-strong);
-    }
-
-    .btn-ghost:hover {
-      background: var(--surface-3);
-      transform: translateY(-2px);
-    }
-
-    /* Hero stats */
-    .hero-stats {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    .stat-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem 1.75rem;
-      box-shadow: var(--shadow);
-      transition: transform 0.25s, box-shadow 0.25s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stat-card::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 4px;
-      border-radius: 4px 0 0 4px;
-    }
-
-    .stat-card.accent::before { background: var(--accent); }
-    .stat-card.lime::before { background: var(--lime); }
-    .stat-card.coral::before { background: var(--coral); }
-    .stat-card.gold::before { background: var(--gold); }
-
-    .stat-card:hover { transform: translateX(4px); box-shadow: var(--shadow-lift); }
-
-    .stat-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      font-weight: 500;
-      color: var(--text-3);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.4rem;
-    }
-
-    .stat-value {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--text);
-      letter-spacing: -0.02em;
-    }
-
-    .stat-sub {
-      font-size: 0.82rem;
-      color: var(--text-2);
-      margin-top: 0.15rem;
-    }
-
-    /* ── SECTIONS ── */
-    section {
-      padding: 7rem 8%;
-    }
-
-    .section-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 0.75rem;
-    }
-
-    .section-title {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-      color: var(--text);
-      margin-bottom: 1rem;
-    }
-
-    .section-desc {
-      font-size: 1.05rem;
-      color: var(--text-2);
-      max-width: 580px;
-      line-height: 1.7;
-    }
-
-    .section-head {
-      margin-bottom: 4rem;
-    }
-
-    /* ── ABOUT ── */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .about-text p {
-      font-size: 1.05rem;
-      color: var(--text-2);
-      line-height: 1.8;
-      margin-bottom: 1.25rem;
-    }
-
-    .about-highlight {
-      display: inline;
-      background: linear-gradient(120deg, rgba(91,75,232,0.15), rgba(139,126,248,0.1));
-      border-radius: 4px;
-      padding: 0 3px;
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .interest-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 2rem;
-    }
-
-    .interest-chip {
-      font-size: 0.82rem;
-      font-weight: 600;
-      padding: 0.4rem 0.9rem;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--border-strong);
-      color: var(--text-2);
-      background: var(--surface);
-      transition: all 0.2s;
-    }
-
-    .interest-chip:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: var(--accent-pale);
-    }
-
-    /* Skills grid */
-    .skills-col h4 {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      font-weight: 500;
-      color: var(--text-3);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .skill-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 2rem;
-    }
-
-    .skill-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.85rem;
-      font-weight: 500;
-      padding: 0.45rem 0.9rem;
-      border-radius: var(--radius-pill);
-      background: var(--surface);
-      border: 1px solid var(--border);
-      color: var(--text);
-      transition: all 0.2s;
-    }
-
-    .skill-pill:hover {
-      border-color: var(--accent);
-      background: var(--accent-pale);
-      color: var(--accent);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
-    }
-
-    .skill-pill img {
-      width: 16px; height: 16px;
-      object-fit: contain;
-    }
-
-    /* ── PROJECTS ── */
-    .projects-bg {
-      background: var(--surface);
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .project-card {
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2rem;
-      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .project-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: var(--radius);
-      background: linear-gradient(135deg, rgba(91,75,232,0.04), transparent);
-      opacity: 0;
-      transition: opacity 0.3s;
-      pointer-events: none;
-    }
-
-    .project-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lift);
-      border-color: rgba(91,75,232,0.3);
-    }
-
-    .project-card:hover::after { opacity: 1; }
-
-    .project-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      margin-bottom: 1rem;
-    }
-
-    .project-icon {
-      width: 48px; height: 48px;
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      flex-shrink: 0;
-    }
-
-    .project-icon.purple { background: var(--accent-pale); }
-    .project-icon.lime { background: #f0fdf4; }
-    .project-icon.coral { background: var(--coral-pale); }
-    .project-icon.gold { background: var(--gold-pale); }
-
-    @media (prefers-color-scheme: dark) {
-      .project-icon.lime { background: #14260a; }
-    }
-
-    .project-badge {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      font-weight: 500;
-      padding: 0.3rem 0.7rem;
-      border-radius: var(--radius-pill);
-      letter-spacing: 0.04em;
-    }
-
-    .badge-winner {
-      background: var(--gold-pale);
-      color: #92400e;
-    }
-
-    .badge-finalist {
-      background: var(--accent-pale);
-      color: var(--accent);
-    }
-
-    .badge-live {
-      background: #f0fdf4;
-      color: #166534;
-    }
-
-    .badge-oss {
-      background: var(--coral-pale);
-      color: #9f1239;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .badge-winner { background: #2c2208; color: #fcd34d; }
-      .badge-finalist { background: #1e1c3a; color: var(--accent-2); }
-      .badge-live { background: #0a200f; color: #86efac; }
-      .badge-oss { background: #2c1318; color: #fda4af; }
-    }
-
-    .project-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      margin-bottom: 0.6rem;
-    }
-
-    .project-year {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      color: var(--text-3);
-      margin-bottom: 0.6rem;
-    }
-
-    .project-desc {
-      font-size: 0.9rem;
-      color: var(--text-2);
-      line-height: 1.7;
-      flex-grow: 1;
-      margin-bottom: 1.5rem;
-    }
-
-    .project-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .stack-tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      font-weight: 500;
-      padding: 0.3rem 0.65rem;
-      border-radius: var(--radius-sm);
-      background: var(--surface-3);
-      color: var(--text-2);
-      border: 1px solid var(--border);
-    }
-
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--accent);
-      text-decoration: none;
-      transition: gap 0.2s;
-    }
-
-    .project-link:hover { gap: 0.7rem; }
-
-    .project-link svg {
-      width: 14px; height: 14px;
-      transition: transform 0.2s;
-    }
-
-    .project-link:hover svg { transform: translate(2px, -2px); }
-
-    /* ── EXPERIENCE ── */
-    .exp-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      position: relative;
-    }
-
-    .exp-list::before {
-      content: '';
-      position: absolute;
-      left: 19px;
-      top: 0; bottom: 0;
-      width: 1px;
-      background: linear-gradient(to bottom, var(--accent), transparent);
-      opacity: 0.3;
-    }
-
-    .exp-item {
-      display: grid;
-      grid-template-columns: 40px 1fr;
-      gap: 1.5rem;
-      padding-bottom: 3rem;
-      position: relative;
-    }
-
-    .exp-dot {
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      background: var(--accent-pale);
-      border: 2px solid var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      position: relative;
-      z-index: 1;
-    }
-
-    .exp-dot svg {
-      width: 16px; height: 16px;
-      stroke: var(--accent);
-      stroke-width: 2;
-      fill: none;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .exp-content {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      transition: box-shadow 0.25s;
-    }
-
-    .exp-content:hover { box-shadow: var(--shadow-lift); }
-
-    .exp-meta {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .exp-org {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--text);
-    }
-
-    .exp-period {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      font-weight: 500;
-      color: var(--accent);
-      background: var(--accent-pale);
-      padding: 0.3rem 0.75rem;
-      border-radius: var(--radius-pill);
-      white-space: nowrap;
-    }
-
-    .exp-role {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-2);
-      margin-bottom: 1rem;
-    }
-
-    .exp-bullets {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.55rem;
-    }
-
-    .exp-bullets li {
-      font-size: 0.9rem;
-      color: var(--text-2);
-      line-height: 1.6;
-      padding-left: 1.2rem;
-      position: relative;
-    }
-
-    .exp-bullets li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    /* ── SKILLS FULL ── */
-    .skills-bg {
-      background: var(--surface);
-    }
-
-    .skills-full-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-    }
-
-    .skills-group {
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-    }
-
-    .skills-group-title {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      font-weight: 500;
-      color: var(--text-3);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .skills-group-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    .skill-item-row {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .skill-item-row:last-child { border-bottom: none; }
-
-    .skill-item-row img {
-      width: 20px; height: 20px;
-      object-fit: contain;
-      flex-shrink: 0;
-    }
-
-    .skill-item-name {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--text);
-      flex: 1;
-    }
-
-    /* ── AWARDS ── */
-    .awards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .award-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
-
-    .award-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lift);
-    }
-
-    .award-icon {
-      font-size: 2rem;
-      line-height: 1;
-      flex-shrink: 0;
-    }
-
-    .award-body {}
-
-    .award-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--text);
-      margin-bottom: 0.35rem;
-      letter-spacing: -0.01em;
-    }
-
-    .award-event {
-      font-size: 0.82rem;
-      color: var(--text-2);
-      margin-bottom: 0.25rem;
-    }
-
-    .award-year {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--text-3);
-    }
-
-    /* ── CONTACT ── */
-    .contact-bg {
-      background: var(--ink);
-      position: relative;
-      overflow: hidden;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .contact-bg { background: #08080f; }
-    }
-
-    .contact-bg::before {
-      content: '';
-      position: absolute;
-      width: 600px; height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(91,75,232,0.18) 0%, transparent 65%);
-      bottom: -200px; right: -100px;
-      pointer-events: none;
-    }
-
-    .contact-inner {
-      position: relative;
-      z-index: 1;
-      max-width: 720px;
-    }
-
-    .contact-inner .section-label { color: var(--accent-2); }
-
-    .contact-inner .section-title { color: #f0eff8; }
-
-    .contact-inner .section-desc { color: rgba(240,239,248,0.6); }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 2.5rem;
-    }
-
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.8rem 1.4rem;
-      border-radius: var(--radius-pill);
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.22s;
-      border: 1px solid rgba(255,255,255,0.12);
-      color: rgba(240,239,248,0.85);
-      background: rgba(255,255,255,0.05);
-    }
-
-    .contact-link:hover {
-      background: rgba(91,75,232,0.3);
-      border-color: var(--accent-2);
-      color: #fff;
-      transform: translateY(-2px);
-    }
-
-    .contact-link svg {
-      width: 18px; height: 18px;
-      stroke: currentColor;
-      stroke-width: 2;
-      fill: none;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .contact-link.primary {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
-    }
-
-    .contact-link.primary:hover {
-      background: var(--accent-2);
-      border-color: var(--accent-2);
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--ink);
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 2rem 8%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      footer { background: #08080f; }
-    }
-
-    .footer-left {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      color: rgba(240,239,248,0.35);
-    }
-
-    .footer-right {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      color: rgba(240,239,248,0.35);
-    }
-
-    /* ── SCROLL REVEAL ── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; padding-top: 100px; }
-      .hero::after { display: none; }
-      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .nav-links { display: none; }
-      section { padding: 5rem 6%; }
-    }
-
-    @media (max-width: 600px) {
-      .hero { padding: 90px 6% 60px; }
-      section { padding: 4rem 5%; }
-      .exp-list::before { left: 15px; }
-      .exp-item { grid-template-columns: 32px 1fr; }
-      .exp-dot { width: 32px; height: 32px; }
-    }
-
-    /* ── MARQUEE ── */
-    .marquee-wrap {
-      overflow: hidden;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 1rem 0;
-      background: var(--surface);
-    }
-
-    .marquee-track {
-      display: flex;
-      gap: 2.5rem;
-      width: max-content;
-      animation: marquee 22s linear infinite;
-    }
-
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .marquee-item {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--text-3);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      white-space: nowrap;
-    }
-
-    .marquee-item::before {
-      content: '✦';
-      color: var(--accent);
-      font-size: 0.6rem;
-    }
-
-    /* selected work number */
-    .project-number {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--text-3);
-      margin-bottom: 0.5rem;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/site.css" />
+
+  <!-- No-flash theme bootstrap -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var sys = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', saved || sys);
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
 
+  <!-- Living aurora background -->
+  <div class="aurora" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+    <div class="orb orb-5"></div>
+  </div>
+
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
   <!-- NAV -->
   <nav>
-    <a href="#" class="nav-logo">Fadhiil<em>.dev</em></a>
+    <a href="#top" class="nav-logo">Fadhiil<em>.dev</em></a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
+      <li><a href="#about" data-en="About" data-id="Tentang">About</a></li>
+      <li><a href="#projects" data-en="Work" data-id="Karya">Work</a></li>
+      <li><a href="#experience" data-en="Experience" data-id="Pengalaman">Experience</a></li>
+      <li><a href="#skills" data-en="Skills" data-id="Keahlian">Skills</a></li>
+      <li><a href="#awards" data-en="Awards" data-id="Penghargaan">Awards</a></li>
     </ul>
-    <a href="mailto:fadhiilhamizan2004@gmail.com" class="nav-cta">Get in touch →</a>
+    <div class="nav-right">
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language / Ganti bahasa" title="EN / ID">
+        <span data-lang="en" class="on">EN</span><span class="sep">/</span><span data-lang="id">ID</span>
+      </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" title="Toggle theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="mailto:fadhiilhamizan2004@gmail.com" class="nav-cta" data-en="Get in touch" data-id="Hubungi saya">Get in touch</a>
+    </div>
   </nav>
 
   <!-- HERO -->
-  <header class="hero">
+  <header class="hero wrap" id="top">
     <div class="hero-left">
-      <div class="hero-eyebrow">Available for collaboration</div>
-      <h1 class="hero-title">
-        Fadhiil<br>
-        <span class="line-accent">Akmal</span><br>
-        <span class="line-outline">Hamizan</span>
+      <div class="hero-eyebrow reveal"><span class="dot"></span> <span data-en="Available for internships &amp; collaboration" data-id="Terbuka untuk magang &amp; kolaborasi">Available for internships &amp; collaboration</span></div>
+      <h1 class="hero-title reveal d1">
+        Fadhiil <span class="grad-text">Akmal</span><br>
+        <span class="outline">Hamizan</span>
       </h1>
-      <p class="hero-desc">
-        Information Systems student at ITS Surabaya — building full-stack web platforms, award-winning games, and open-source tools. Passionate about turning complex problems into elegant tech.
+      <p class="hero-desc reveal d2" data-html
+         data-en="Information Systems undergraduate at <strong>ITS Surabaya</strong> — building full-stack web platforms, award-winning games, and open-source tools. I turn complex problems into elegant, well-engineered software."
+         data-id="Mahasiswa Sistem Informasi di <strong>ITS Surabaya</strong> — membangun platform web full-stack, game peraih penghargaan, dan perkakas open-source. Saya mengubah masalah rumit menjadi perangkat lunak yang elegan dan rapi.">
+        Information Systems undergraduate at <strong>ITS Surabaya</strong> — building full-stack web platforms, award-winning games, and open-source tools. I turn complex problems into elegant, well-engineered software.
       </p>
-      <div class="hero-actions">
+      <div class="hero-actions reveal d3">
         <a href="#projects" class="btn btn-primary">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m5 12 14 0M12 5l7 7-7 7"/></svg>
-          View Projects
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span data-en="View my work" data-id="Lihat karya saya">View my work</span>
         </a>
-        <a href="https://linkedin.com/in/fadhiil-akmal-hamizan/" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
+        <a href="assets/Fadhiil-Akmal-Hamizan-CV.pdf" download class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          <span data-en="Download CV" data-id="Unduh CV">Download CV</span>
+        </a>
+        <div class="hero-socials">
+          <a href="https://github.com/fadhiilhamizan" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.36 9.36 0 0 1 12 6.84c.85 0 1.71.12 2.51.34 1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.91 0 1.38-.01 2.49-.01 2.83 0 .27.18.6.69.49A10.04 10.04 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/fadhiil-akmal-hamizan/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34V9.99H5.67v8.35h2.67zM7 8.8a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1zm11.34 9.54v-4.59c0-2.45-1.31-3.59-3.06-3.59a2.64 2.64 0 0 0-2.39 1.31v-1.13H10.2v8.35h2.67v-4.41c0-1.16.22-2.28 1.66-2.28 1.42 0 1.44 1.33 1.44 2.36v4.33h2.37z"/></svg>
+          </a>
+          <a href="mailto:fadhiilhamizan2004@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
       </div>
     </div>
 
-    <div class="hero-stats">
-      <div class="stat-card accent reveal">
-        <div class="stat-label">Current Status</div>
-        <div class="stat-value">ITS Surabaya</div>
-        <div class="stat-sub">B.S. Information Systems · 2023 – 2027</div>
+    <!-- Hero bento cluster -->
+    <div class="hero-bento">
+      <div class="glass-card hero-feature span-2 reveal d1" data-tilt>
+        <a href="project.html#atmosfer">
+          <div class="weather-scene">
+            <div class="ws-sun"></div>
+            <div class="ws-cloud c1"></div>
+            <div class="ws-cloud c2"></div>
+            <div class="ws-overlay">
+              <div class="ws-top">
+                <div class="ws-temp">27°</div>
+                <span class="ws-tag" data-en="★ Featured build" data-id="★ Proyek unggulan">★ Featured build</span>
+              </div>
+              <div class="ws-bottom">
+                <div class="ws-city">Surabaya, ID</div>
+                <div class="ws-cond" data-en="Clear skies · living UI" data-id="Langit cerah · UI hidup">Clear skies · living UI</div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-feature-body">
+            <div class="hero-feature-title">Atmosfer <span class="arrow">↗</span></div>
+            <div class="hero-feature-sub" data-en="Full-stack weather dashboard · React + Express" data-id="Dasbor cuaca full-stack · React + Express">Full-stack weather dashboard · React + Express</div>
+          </div>
+        </a>
       </div>
-      <div class="stat-card lime reveal reveal-delay-1">
-        <div class="stat-label">Top Achievement</div>
-        <div class="stat-value">🥇 ISCOM 2024</div>
-        <div class="stat-sub">1st Place — Game Application Development</div>
+
+      <div class="glass-card mini-stat reveal d2">
+        <div class="ms-label" data-en="Top award" data-id="Penghargaan utama">Top award</div>
+        <div class="ms-value" data-en="🥇 1st" data-id="🥇 Juara 1">🥇 1st</div>
+        <div class="ms-sub">ISCOM 2024 · Game Dev</div>
       </div>
-      <div class="stat-card coral reveal reveal-delay-2">
-        <div class="stat-label">Latest Project</div>
-        <div class="stat-value">Bookuy Platform</div>
-        <div class="stat-sub">Laravel 12 · PHP 8.2 · Student Marketplace</div>
+      <div class="glass-card mini-stat reveal d3">
+        <div class="ms-label" data-en="Languages" data-id="Bahasa">Languages</div>
+        <div class="ms-value"><span data-count="8">0</span>+</div>
+        <div class="ms-sub">Java, Python, PHP, JS…</div>
       </div>
-      <div class="stat-card gold reveal reveal-delay-3">
-        <div class="stat-label">Languages Mastered</div>
-        <div class="stat-value">10 Languages</div>
-        <div class="stat-sub">Java, Python, PHP, JS, SQL, C# + more</div>
+      <div class="glass-card mini-stat span-2 reveal d4">
+        <div class="ms-label" data-en="Currently" data-id="Saat ini">Currently</div>
+        <div class="ms-value" style="font-size:1.25rem;" data-en="B.S. Information Systems" data-id="S1 Sistem Informasi">B.S. Information Systems</div>
+        <div class="ms-sub">ITS Surabaya · 2023 – 2027</div>
       </div>
     </div>
   </header>
 
   <!-- MARQUEE -->
-  <div class="marquee-wrap">
+  <div class="marquee">
     <div class="marquee-track">
-      <span class="marquee-item">Laravel 12</span>
-      <span class="marquee-item">PHP 8.2</span>
-      <span class="marquee-item">Python</span>
-      <span class="marquee-item">JavaScript</span>
-      <span class="marquee-item">Java</span>
-      <span class="marquee-item">SQL</span>
-      <span class="marquee-item">C#</span>
-      <span class="marquee-item">Figma</span>
-      <span class="marquee-item">Power BI</span>
-      <span class="marquee-item">Tableau</span>
-      <span class="marquee-item">Game Development</span>
-      <span class="marquee-item">UI/UX Design</span>
-      <span class="marquee-item">Data Analysis</span>
-      <span class="marquee-item">Open Source</span>
-      <!-- Repeat for seamless loop -->
-      <span class="marquee-item">Laravel 12</span>
-      <span class="marquee-item">PHP 8.2</span>
-      <span class="marquee-item">Python</span>
-      <span class="marquee-item">JavaScript</span>
-      <span class="marquee-item">Java</span>
-      <span class="marquee-item">SQL</span>
-      <span class="marquee-item">C#</span>
-      <span class="marquee-item">Figma</span>
-      <span class="marquee-item">Power BI</span>
-      <span class="marquee-item">Tableau</span>
-      <span class="marquee-item">Game Development</span>
-      <span class="marquee-item">UI/UX Design</span>
-      <span class="marquee-item">Data Analysis</span>
-      <span class="marquee-item">Open Source</span>
+      <span class="marquee-item">React</span><span class="marquee-item">Laravel 12</span><span class="marquee-item">Node.js</span><span class="marquee-item">Python</span><span class="marquee-item">JavaScript</span><span class="marquee-item">Java</span><span class="marquee-item">PHP 8.2</span><span class="marquee-item">SQL</span><span class="marquee-item">C#</span><span class="marquee-item">Tailwind CSS</span><span class="marquee-item">Roblox · Lua</span><span class="marquee-item">Figma</span><span class="marquee-item">Power BI</span><span class="marquee-item">Tableau</span><span class="marquee-item">Open Source</span>
+      <span class="marquee-item">React</span><span class="marquee-item">Laravel 12</span><span class="marquee-item">Node.js</span><span class="marquee-item">Python</span><span class="marquee-item">JavaScript</span><span class="marquee-item">Java</span><span class="marquee-item">PHP 8.2</span><span class="marquee-item">SQL</span><span class="marquee-item">C#</span><span class="marquee-item">Tailwind CSS</span><span class="marquee-item">Roblox · Lua</span><span class="marquee-item">Figma</span><span class="marquee-item">Power BI</span><span class="marquee-item">Tableau</span><span class="marquee-item">Open Source</span>
     </div>
   </div>
 
   <!-- ABOUT -->
-  <section id="about">
+  <section id="about" class="wrap">
     <div class="section-head reveal">
-      <div class="section-label">// about me</div>
-      <h2 class="section-title">Builder by instinct,<br>solver by training.</h2>
+      <div class="section-label" data-en="about me" data-id="tentang saya">about me</div>
+      <h2 class="section-title" data-html data-en="Builder by instinct,<br><span class='grad-text'>solver</span> by training." data-id="Membangun karena naluri,<br><span class='grad-text'>memecahkan</span> karena terlatih.">Builder by instinct,<br><span class="grad-text">solver</span> by training.</h2>
     </div>
     <div class="about-grid">
       <div class="about-text reveal">
-        <p>
-          I'm a <span class="about-highlight">2nd-year Information Systems student</span> at Institut Teknologi Sepuluh Nopember (ITS), Surabaya — one of Indonesia's top engineering universities. My work sits at the intersection of software engineering, data, and interactive media.
+        <p data-html
+           data-en="I'm an <span class='hl'>Information Systems undergraduate</span> at Institut Teknologi Sepuluh Nopember (ITS), Surabaya — one of Indonesia's top engineering universities. My work sits at the intersection of software engineering, data, and interactive media."
+           data-id="Saya <span class='hl'>mahasiswa Sistem Informasi</span> di Institut Teknologi Sepuluh Nopember (ITS), Surabaya — salah satu universitas teknik terbaik di Indonesia. Karya saya berada di persimpangan rekayasa perangkat lunak, data, dan media interaktif.">
+          I'm an <span class="hl">Information Systems undergraduate</span> at Institut Teknologi Sepuluh Nopember (ITS), Surabaya — one of Indonesia's top engineering universities. My work sits at the intersection of software engineering, data, and interactive media.
         </p>
-        <p>
-          From shipping a full-stack <span class="about-highlight">book marketplace with Laravel</span> to winning a national game development competition, I chase projects that demand both technical depth and creative thinking.
+        <p data-html
+           data-en="From shipping a <span class='hl'>full-stack book marketplace with Laravel</span> to a backend-proxied <span class='hl'>weather dashboard with a living UI</span>, to winning a national game development competition — I chase projects that demand both technical depth and creative thinking."
+           data-id="Mulai dari merilis <span class='hl'>marketplace buku full-stack dengan Laravel</span>, <span class='hl'>dasbor cuaca dengan UI hidup</span> bertenaga backend proxy, hingga memenangkan kompetisi pengembangan game nasional — saya mengejar proyek yang menuntut kedalaman teknis sekaligus pemikiran kreatif.">
+          From shipping a <span class="hl">full-stack book marketplace with Laravel</span> to a backend-proxied <span class="hl">weather dashboard with a living UI</span>, to winning a national game development competition — I chase projects that demand both technical depth and creative thinking.
         </p>
-        <p>
+        <p data-html
+           data-en="Outside code, I contribute to open-source browser tools, design interfaces in Figma, and analyze data with Python, R, Tableau, and Power BI. I believe the best software is invisible — it just works."
+           data-id="Di luar koding, saya berkontribusi pada perkakas peramban open-source, mendesain antarmuka di Figma, dan menganalisis data dengan Python, R, Tableau, serta Power BI. Saya percaya perangkat lunak terbaik itu tak terlihat — ia tinggal bekerja.">
           Outside code, I contribute to open-source browser tools, design interfaces in Figma, and analyze data with Python, R, Tableau, and Power BI. I believe the best software is invisible — it just works.
         </p>
         <div class="interest-row">
-          <span class="interest-chip">🎮 Game Dev</span>
-          <span class="interest-chip">📊 Data Analytics</span>
-          <span class="interest-chip">🌐 Web Engineering</span>
-          <span class="interest-chip">🎨 UI/UX Design</span>
-          <span class="interest-chip">🤖 AI/ML</span>
-          <span class="interest-chip">🥋 Taekwondo</span>
+          <span class="chip">🎮 Game Dev</span>
+          <span class="chip" data-en="📊 Data Analytics" data-id="📊 Analitik Data">📊 Data Analytics</span>
+          <span class="chip" data-en="🌐 Web Engineering" data-id="🌐 Rekayasa Web">🌐 Web Engineering</span>
+          <span class="chip" data-en="🎨 UI/UX Design" data-id="🎨 Desain UI/UX">🎨 UI/UX Design</span>
+          <span class="chip">🤖 AI / ML</span>
+          <span class="chip">🥋 Taekwondo</span>
         </div>
       </div>
 
-      <div class="reveal reveal-delay-1">
-        <div class="skills-col">
-          <h4>Quick Stack</h4>
-          <div class="skill-pills">
-            <span class="skill-pill">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="" /> Laravel
-            </span>
-            <span class="skill-pill">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" /> Python
-            </span>
-            <span class="skill-pill">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" /> JavaScript
-            </span>
-            <span class="skill-pill">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="" /> Java
-            </span>
-            <span class="skill-pill">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="" /> Figma
-            </span>
-            <span class="skill-pill">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="" /> C#
-            </span>
-            <span class="skill-pill">
-              <img src="https://cdn.simpleicons.org/tableau/E22427" alt="" /> Tableau
-            </span>
-            <span class="skill-pill">
-              <img src="https://cdn.simpleicons.org/powerbi/F2C811" alt="" /> Power BI
-            </span>
+      <div class="about-side reveal d1">
+        <div class="glass-card panel" data-tilt>
+          <div class="panel-title" data-en="Quick stack" data-id="Teknologi utama">Quick stack</div>
+          <div class="quick-stack">
+            <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="" /> React</span>
+            <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="" /> Laravel</span>
+            <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="" /> Node.js</span>
+            <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" /> Python</span>
+            <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" /> JavaScript</span>
+            <span class="stack-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="" /> Figma</span>
+            <span class="stack-pill"><img src="https://cdn.simpleicons.org/tableau/E22427" alt="" /> Tableau</span>
+            <span class="stack-pill"><img src="https://cdn.simpleicons.org/powerbi/F2C811" alt="" /> Power BI</span>
           </div>
         </div>
-        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin-top:0.5rem;">
-          <div class="stat-label" style="margin-bottom:1rem;">Education Timeline</div>
-          <div style="display:flex;flex-direction:column;gap:0.75rem;">
-            <div style="display:flex;gap:0.75rem;align-items:flex-start;">
-              <div style="width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:5px;flex-shrink:0;"></div>
-              <div>
-                <div style="font-weight:600;font-size:0.88rem;color:var(--text);">ITS Surabaya</div>
-                <div style="font-size:0.8rem;color:var(--text-2);">B.S. Information Systems · 2023 – 2027</div>
-              </div>
+        <div class="glass-card panel" data-tilt>
+          <div class="panel-title" data-en="Education" data-id="Pendidikan">Education</div>
+          <div class="edu-item">
+            <div class="edu-dot" style="background:var(--accent);"></div>
+            <div>
+              <div class="edu-name">ITS Surabaya</div>
+              <div class="edu-meta" data-en="B.S. Information Systems · 2023 – 2027" data-id="S1 Sistem Informasi · 2023 – 2027">B.S. Information Systems · 2023 – 2027</div>
             </div>
-            <div style="display:flex;gap:0.75rem;align-items:flex-start;">
-              <div style="width:8px;height:8px;border-radius:50%;background:var(--text-3);margin-top:5px;flex-shrink:0;"></div>
-              <div>
-                <div style="font-weight:600;font-size:0.88rem;color:var(--text);">SMAN 22 Jakarta</div>
-                <div style="font-size:0.8rem;color:var(--text-2);">High School Diploma · 2020 – 2023</div>
-              </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-dot" style="background:var(--text-3);"></div>
+            <div>
+              <div class="edu-name">SMAN 22 Jakarta</div>
+              <div class="edu-meta" data-en="High School Diploma · 2020 – 2023" data-id="Ijazah SMA · 2020 – 2023">High School Diploma · 2020 – 2023</div>
             </div>
           </div>
         </div>
@@ -1225,425 +224,422 @@
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects" class="projects-bg">
+  <section id="projects" class="wrap">
     <div class="section-head reveal">
-      <div class="section-label">// selected work</div>
-      <h2 class="section-title">Things I've built.</h2>
-      <p class="section-desc">From marketplace platforms to game engines to open-source browser tools.</p>
+      <div class="section-label" data-en="selected work" data-id="karya pilihan">selected work</div>
+      <h2 class="section-title" data-html data-en="Things I've <span class='grad-text'>built</span>." data-id="Yang telah saya <span class='grad-text'>bangun</span>.">Things I've <span class="grad-text">built</span>.</h2>
+      <p class="section-desc" data-en="From a full-stack weather platform to marketplace apps, an award-winning game, and open-source browser tools." data-id="Dari platform cuaca full-stack hingga aplikasi marketplace, game peraih penghargaan, dan perkakas peramban open-source.">From a full-stack weather platform to marketplace apps, an award-winning game, and open-source browser tools.</p>
     </div>
 
+    <!-- FEATURED 1: Atmosfer (sky) -->
+    <article class="glass-card featured reveal">
+      <div class="featured-visual">
+        <span class="fv-badge"><span class="dot"></span> <span data-en="Flagship · 2026" data-id="Unggulan · 2026">Flagship · 2026</span></span>
+        <div class="ws-sun"></div>
+        <div class="ws-cloud c1"></div>
+        <div class="ws-cloud c2"></div>
+        <div class="fv-glass">
+          <div class="fv-temp">27°</div>
+          <div class="fv-meta">
+            <strong>Surabaya</strong><br>
+            <span data-en="Clear · feels 29° · UV 7" data-id="Cerah · terasa 29° · UV 7">Clear · feels 29° · UV 7</span>
+          </div>
+        </div>
+      </div>
+      <div class="featured-body">
+        <div class="featured-eyebrow"><span class="star">★</span> <span data-en="Featured project · Full-stack" data-id="Proyek unggulan · Full-stack">Featured project · Full-stack</span></div>
+        <h3 class="featured-title">Atmosfer</h3>
+        <div class="featured-tagline" data-en="A weather dashboard whose sky changes to match the forecast." data-id="Dasbor cuaca yang langitnya berubah mengikuti ramalan.">A weather dashboard whose sky changes to match the forecast.</div>
+        <p class="featured-desc"
+           data-en="Search any city (or use your location) for current conditions, a 24-hour hourly strip, and a 7-day outlook — with the whole interface re-tinting to the real weather and time of day. Built around a backend proxy that keeps the API key off the client, caches responses, and normalizes provider data behind a clean contract."
+           data-id="Cari kota mana pun (atau pakai lokasimu) untuk kondisi terkini, prakiraan 24 jam, dan ramalan 7 hari — dengan seluruh antarmuka berubah warna mengikuti cuaca dan waktu setempat. Dibangun di atas backend proxy yang menyembunyikan API key dari klien, men-cache respons, dan menormalkan data penyedia di balik kontrak yang rapi.">
+          Search any city (or use your location) for current conditions, a 24-hour hourly strip, and a 7-day outlook — with the whole interface re-tinting to the real weather and time of day. Built around a backend proxy that keeps the API key off the client, caches responses, and normalizes provider data behind a clean contract.
+        </p>
+        <div class="featured-features">
+          <div class="ff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Living &quot;sky&quot; theming engine" data-id="Mesin tema &quot;langit&quot; hidup">Living "sky" theming engine</span></div>
+          <div class="ff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Backend proxy + TTL caching" data-id="Backend proxy + cache TTL">Backend proxy + TTL caching</span></div>
+          <div class="ff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Interactive SVG charts" data-id="Grafik SVG interaktif">Interactive SVG charts</span></div>
+          <div class="ff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Leaflet radar + RainViewer" data-id="Radar Leaflet + RainViewer">Leaflet radar + RainViewer</span></div>
+          <div class="ff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Installable PWA, offline-ready" data-id="PWA terinstal, siap offline">Installable PWA, offline-ready</span></div>
+          <div class="ff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Rate-limited, tested API" data-id="API ber-rate-limit & teruji">Rate-limited, tested API</span></div>
+        </div>
+        <div class="stack-row">
+          <span class="tag">React</span><span class="tag">Vite</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">Tailwind CSS</span><span class="tag">Leaflet</span><span class="tag">PWA</span>
+        </div>
+        <div class="featured-foot">
+          <a href="project.html#atmosfer" class="plink"><span data-en="Read case study" data-id="Baca studi kasus">Read case study</span>
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://github.com/fadhiilhamizan/weather-dashboard" target="_blank" rel="noopener" class="icon-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.36 9.36 0 0 1 12 6.84c.85 0 1.71.12 2.51.34 1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.91 0 1.38-.01 2.49-.01 2.83 0 .27.18.6.69.49A10.04 10.04 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- FEATURED 2: Naufragus (ocean, mirrored) -->
+    <article class="glass-card featured reverse reveal">
+      <div class="featured-visual ocean-visual">
+        <span class="fv-badge gold"><span class="trophy">🥇</span> <span data-en="1st Place · ISCOM 2024" data-id="Juara 1 · ISCOM 2024">1st Place · ISCOM 2024</span></span>
+        <div class="ocean-ray" style="left:18%;"></div>
+        <div class="ocean-ray" style="left:52%; animation-delay:-3s;"></div>
+        <span class="sea-life" style="top:30%; left:18%;">🐠</span>
+        <span class="sea-life" style="top:55%; left:70%; animation-delay:-2s;">🐟</span>
+        <span class="sea-life jelly" style="top:24%; left:62%; animation-delay:-1s;">🪼</span>
+        <span class="bubble" style="left:12%; width:9px; height:9px; animation-duration:6s;"></span>
+        <span class="bubble" style="left:28%; width:6px; height:6px; animation-duration:5s; animation-delay:1s;"></span>
+        <span class="bubble" style="left:44%; width:12px; height:12px; animation-duration:7s; animation-delay:2s;"></span>
+        <span class="bubble" style="left:66%; width:7px; height:7px; animation-duration:5.5s; animation-delay:0.5s;"></span>
+        <span class="bubble" style="left:82%; width:10px; height:10px; animation-duration:6.5s; animation-delay:1.5s;"></span>
+        <span class="bubble" style="left:90%; width:5px; height:5px; animation-duration:4.5s; animation-delay:2.5s;"></span>
+        <div class="fv-glass">
+          <div class="fv-temp" style="font-size:1.9rem;">−45m</div>
+          <div class="fv-meta">
+            <strong data-en="Depth" data-id="Kedalaman">Depth</strong><br>
+            <span data-en="Quest · free the jellyfish 🪼" data-id="Misi · bebaskan ubur-ubur 🪼">Quest · free the jellyfish 🪼</span>
+          </div>
+        </div>
+      </div>
+      <div class="featured-body">
+        <div class="featured-eyebrow"><span class="star">★</span> <span data-en="Award winner · Game" data-id="Peraih juara · Game">Award winner · Game</span></div>
+        <h3 class="featured-title">Naufragus</h3>
+        <div class="featured-tagline" data-en="An underwater adventure that teaches kids to save the ocean." data-id="Petualangan bawah laut yang mengajak anak menjaga lautan.">An underwater adventure that teaches kids to save the ocean.</div>
+        <p class="featured-desc"
+           data-en="A single-player Roblox adventure: after carelessly littering, you're swept to the seafloor and must clean up trash, free trapped sea creatures, solve puzzles, and parkour your way back to the surface. Designed to teach children 7–15 about Indonesia's marine biodiversity and the plastic crisis. Built with Team 54 — and awarded 1st place in Game Application Development at ISCOM 2024."
+           data-id="Petualangan Roblox pemain tunggal: setelah membuang sampah sembarangan, kamu tersapu ke dasar laut dan harus membersihkan sampah, membebaskan hewan laut yang terjebak, memecahkan teka-teki, dan ber-parkour kembali ke permukaan. Dirancang untuk mengajarkan anak 7–15 tahun tentang biodiversitas laut Indonesia dan krisis plastik. Dibuat bersama Tim 54 — dan meraih Juara 1 Pengembangan Aplikasi Game di ISCOM 2024.">
+          A single-player Roblox adventure: after carelessly littering, you're swept to the seafloor and must clean up trash, free trapped sea creatures, solve puzzles, and parkour your way back to the surface. Designed to teach children 7–15 about Indonesia's marine biodiversity and the plastic crisis. Built with Team 54 — and awarded 1st place in Game Application Development at ISCOM 2024.
+        </p>
+        <div class="featured-features">
+          <div class="ff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Clean-up &amp; rescue mechanics" data-id="Mekanik bersih-bersih &amp; penyelamatan">Clean-up &amp; rescue mechanics</span></div>
+          <div class="ff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Exploration, puzzles &amp; parkour" data-id="Eksplorasi, teka-teki &amp; parkour">Exploration, puzzles &amp; parkour</span></div>
+          <div class="ff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Cross-platform: PC &amp; mobile" data-id="Lintas platform: PC &amp; ponsel">Cross-platform: PC &amp; mobile</span></div>
+          <div class="ff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Custom 3D world in Roblox Studio" data-id="Dunia 3D buatan di Roblox Studio">Custom 3D world in Roblox Studio</span></div>
+          <div class="ff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Conservation-education theme" data-id="Tema edukasi konservasi">Conservation-education theme</span></div>
+          <div class="ff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="1st place — national finalist track" data-id="Juara 1 — jalur finalis nasional">1st place — national finalist track</span></div>
+        </div>
+        <div class="stack-row">
+          <span class="tag">Roblox Studio</span><span class="tag">Lua</span><span class="tag">Canva</span><span class="tag">3D Modeling</span><span class="tag">Game Design</span>
+        </div>
+        <div class="featured-foot">
+          <a href="project.html#naufragus" class="plink"><span data-en="Read case study" data-id="Baca studi kasus">Read case study</span>
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <span class="icon-link" style="cursor:default;">🐢 <span data-en="Team 54 · Roblox" data-id="Tim 54 · Roblox">Team 54 · Roblox</span></span>
+        </div>
+      </div>
+    </article>
+
+    <!-- GRID -->
     <div class="projects-grid">
 
       <!-- Bookuy -->
-      <div class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon purple">📚</div>
-          <span class="project-badge badge-live">Live</span>
+      <article class="glass-card project-card reveal" data-tilt>
+        <div class="project-top">
+          <div class="project-icon">📚</div>
+          <span class="badge badge-green" data-en="Live" data-id="Live">Live</span>
         </div>
-        <div class="project-number">01 / Web Platform</div>
+        <div class="project-num" data-en="01 / Web Platform" data-id="01 / Platform Web">01 / Web Platform</div>
         <h3 class="project-title">Bookuy</h3>
         <div class="project-year">2025</div>
-        <p class="project-desc">
-          A student-centric marketplace and rental platform for second-hand books. Supports buy/sell, semester-based rentals, smart filtering, cart management, and a seller reputation system. Built as a capstone with 5 collaborators at ITS.
-        </p>
-        <div class="project-stack">
-          <span class="stack-tag">Laravel 12</span>
-          <span class="stack-tag">PHP 8.2</span>
-          <span class="stack-tag">MySQL</span>
-          <span class="stack-tag">Blade</span>
-          <span class="stack-tag">Tailwind CSS</span>
+        <p class="project-desc" data-en="A student-centric marketplace and rental platform for second-hand books — buy/sell, semester rentals, smart filtering, cart management, and a seller reputation system. Built as a capstone with 5 collaborators at ITS." data-id="Marketplace &amp; platform penyewaan buku bekas untuk mahasiswa — jual/beli, sewa per semester, filter cerdas, manajemen keranjang, dan sistem reputasi penjual. Dibuat sebagai proyek capstone bersama 5 kolaborator di ITS.">A student-centric marketplace and rental platform for second-hand books — buy/sell, semester rentals, smart filtering, cart management, and a seller reputation system. Built as a capstone with 5 collaborators at ITS.</p>
+        <div class="stack-row">
+          <span class="tag">Laravel 12</span><span class="tag">PHP 8.2</span><span class="tag">MySQL</span><span class="tag">Blade</span><span class="tag">Tailwind</span>
         </div>
-        <a href="https://github.com/fadhiilhamizan/Bookuy" target="_blank" class="project-link">
-          View on GitHub
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17L17 7"/></svg>
-        </a>
-      </div>
+        <div class="project-foot">
+          <a href="project.html#bookuy" class="plink"><span data-en="Case study" data-id="Studi kasus">Case study</span>
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://github.com/fadhiilhamizan/Bookuy" target="_blank" rel="noopener" class="icon-link" aria-label="Bookuy on GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.36 9.36 0 0 1 12 6.84c.85 0 1.71.12 2.51.34 1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.91 0 1.38-.01 2.49-.01 2.83 0 .27.18.6.69.49A10.04 10.04 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+          </a>
+        </div>
+      </article>
 
-      <!-- ISCOM Game -->
-      <div class="project-card reveal reveal-delay-1">
-        <div class="project-header">
-          <div class="project-icon gold">🏆</div>
-          <span class="project-badge badge-winner">1st Place</span>
+      <!-- uBlock -->
+      <article class="glass-card project-card reveal d1" data-tilt>
+        <div class="project-top">
+          <div class="project-icon">🛡️</div>
+          <span class="badge badge-pink" data-en="Open Source" data-id="Open Source">Open Source</span>
         </div>
-        <div class="project-number">02 / Game Development</div>
-        <h3 class="project-title">ISCOM Game Project</h3>
-        <div class="project-year">2024</div>
-        <p class="project-desc">
-          Award-winning game built for the Information System Competition (ISCOM) 2024. Secured first place in the Game Application Development category, showcasing strong algorithmic logic and interactive gameplay design.
-        </p>
-        <div class="project-stack">
-          <span class="stack-tag">Game Dev</span>
-          <span class="stack-tag">Algorithmic Logic</span>
-          <span class="stack-tag">UI/UX</span>
+        <div class="project-num" data-en="02 / Browser Extension" data-id="02 / Ekstensi Peramban">02 / Browser Extension</div>
+        <h3 class="project-title">uBlock Ad-Block</h3>
+        <div class="project-year">2025</div>
+        <p class="project-desc" data-en="A forked and maintained build of uBlock Origin — the efficient, open-source content blocker for Chromium and Firefox. Ad blocking, tracker blocking, and privacy protection across major browsers." data-id="Fork dan pemeliharaan dari uBlock Origin — pemblokir konten open-source yang efisien untuk Chromium dan Firefox. Pemblokiran iklan, pelacak, dan perlindungan privasi di peramban utama.">A forked and maintained build of uBlock Origin — the efficient, open-source content blocker for Chromium and Firefox. Ad blocking, tracker blocking, and privacy protection across major browsers.</p>
+        <div class="stack-row">
+          <span class="tag">JavaScript</span><span class="tag">WebAssembly</span><span class="tag">CSS</span><span class="tag">GPL-3.0</span>
         </div>
-        <span class="project-link" style="cursor:default;opacity:0.6;">
-          Internal Competition
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        </span>
-      </div>
+        <div class="project-foot">
+          <a href="project.html#ublock" class="plink"><span data-en="Case study" data-id="Studi kasus">Case study</span>
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://github.com/fadhiilhamizan/uBlock-Browser-Ad-Block" target="_blank" rel="noopener" class="icon-link" aria-label="uBlock on GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.36 9.36 0 0 1 12 6.84c.85 0 1.71.12 2.51.34 1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.91 0 1.38-.01 2.49-.01 2.83 0 .27.18.6.69.49A10.04 10.04 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+          </a>
+        </div>
+      </article>
 
       <!-- GEMASTIK -->
-      <div class="project-card reveal reveal-delay-2">
-        <div class="project-header">
-          <div class="project-icon lime">🎮</div>
-          <span class="project-badge badge-finalist">Finalist</span>
+      <article class="glass-card project-card reveal d2" data-tilt>
+        <div class="project-top">
+          <div class="project-icon">🎮</div>
+          <span class="badge badge-violet" data-en="Finalist" data-id="Finalis">Finalist</span>
         </div>
-        <div class="project-number">03 / Game Development</div>
-        <h3 class="project-title">GEMASTIK Game Entry</h3>
+        <div class="project-num" data-en="03 / Game Development" data-id="03 / Pengembangan Game">03 / Game Development</div>
+        <h3 class="project-title">GEMASTIK Entry</h3>
         <div class="project-year">2024</div>
-        <p class="project-desc">
-          Selected as an Internal Finalist at ITS for the prestigious national GEMASTIK competition, Game Application Development category. One of few projects internally endorsed to represent ITS at the national level.
-        </p>
-        <div class="project-stack">
-          <span class="stack-tag">Game Dev</span>
-          <span class="stack-tag">Interaction Design</span>
+        <p class="project-desc" data-en="Selected as an Internal ITS Finalist for the prestigious national GEMASTIK competition, Game Application Development category — one of few projects internally endorsed to represent ITS at the national level." data-id="Terpilih sebagai Finalis Internal ITS untuk kompetisi nasional bergengsi GEMASTIK, kategori Pengembangan Aplikasi Game — salah satu dari sedikit proyek yang diendorse internal untuk mewakili ITS di tingkat nasional.">Selected as an Internal ITS Finalist for the prestigious national GEMASTIK competition, Game Application Development category — one of few projects internally endorsed to represent ITS at the national level.</p>
+        <div class="stack-row">
+          <span class="tag">Game Dev</span><span class="tag">Interaction Design</span>
         </div>
-        <span class="project-link" style="cursor:default;opacity:0.6;">
-          National Finalist
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        </span>
-      </div>
+        <div class="project-foot">
+          <a href="project.html#gemastik" class="plink"><span data-en="Case study" data-id="Studi kasus">Case study</span>
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <span class="icon-link" style="cursor:default;">🏅 <span data-en="National finalist" data-id="Finalis nasional">National finalist</span></span>
+        </div>
+      </article>
 
       <!-- LoopLook -->
-      <div class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon coral">♻️</div>
-          <span class="project-badge badge-finalist">Design</span>
+      <article class="glass-card project-card reveal" data-tilt>
+        <div class="project-top">
+          <div class="project-icon">♻️</div>
+          <span class="badge badge-cyan" data-en="Design" data-id="Desain">Design</span>
         </div>
-        <div class="project-number">04 / UI/UX Design</div>
+        <div class="project-num" data-en="04 / UI/UX Design" data-id="04 / Desain UI/UX">04 / UI/UX Design</div>
         <h3 class="project-title">LoopLook</h3>
         <div class="project-year">2023</div>
-        <p class="project-desc">
-          Designed the initial UI/UX prototype for a sustainable clothing recycling application. Focused on intuitive user flows, accessibility, and reducing cognitive load for a mobile-first experience.
-        </p>
-        <div class="project-stack">
-          <span class="stack-tag">Figma</span>
-          <span class="stack-tag">Prototyping</span>
-          <span class="stack-tag">Mobile-First</span>
-          <span class="stack-tag">User Research</span>
+        <p class="project-desc" data-en="UI/UX prototype for a sustainable clothing recycling app. Focused on intuitive user flows, accessibility, and reducing cognitive load for a mobile-first experience." data-id="Prototipe UI/UX untuk aplikasi daur ulang pakaian berkelanjutan. Fokus pada alur pengguna intuitif, aksesibilitas, dan pengurangan beban kognitif untuk pengalaman mobile-first.">UI/UX prototype for a sustainable clothing recycling app. Focused on intuitive user flows, accessibility, and reducing cognitive load for a mobile-first experience.</p>
+        <div class="stack-row">
+          <span class="tag">Figma</span><span class="tag">Prototyping</span><span class="tag">Mobile-First</span>
         </div>
-        <span class="project-link" style="cursor:default;opacity:0.6;">
-          UI Prototype
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-        </span>
-      </div>
+        <div class="project-foot">
+          <a href="project.html#looplook" class="plink"><span data-en="Case study" data-id="Studi kasus">Case study</span>
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <span class="icon-link" style="cursor:default;">🎨 <span data-en="UI prototype" data-id="Prototipe UI">UI prototype</span></span>
+        </div>
+      </article>
 
-      <!-- uBlock Fork -->
-      <div class="project-card reveal reveal-delay-1">
-        <div class="project-header">
-          <div class="project-icon purple">🛡️</div>
-          <span class="project-badge badge-oss">Open Source</span>
+      <!-- GDSC -->
+      <article class="glass-card project-card reveal d1" data-tilt>
+        <div class="project-top">
+          <div class="project-icon">⚡</div>
+          <span class="badge badge-gold" data-en="Competed" data-id="Berkompetisi">Competed</span>
         </div>
-        <div class="project-number">05 / Browser Extension</div>
-        <h3 class="project-title">uBlock Browser Ad-Block</h3>
-        <div class="project-year">2025</div>
-        <p class="project-desc">
-          A forked and maintained version of uBlock Origin — the efficient, open-source content blocker for Chromium and Firefox. Supports ad blocking, tracker blocking, and privacy protection across major browsers.
-        </p>
-        <div class="project-stack">
-          <span class="stack-tag">JavaScript</span>
-          <span class="stack-tag">CSS</span>
-          <span class="stack-tag">HTML</span>
-          <span class="stack-tag">WebAssembly</span>
-          <span class="stack-tag">GPL-3.0</span>
-        </div>
-        <a href="https://github.com/fadhiilhamizan/uBlock-Browser-Ad-Block" target="_blank" class="project-link">
-          View on GitHub
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17L17 7"/></svg>
-        </a>
-      </div>
-
-      <!-- GDSC Programming -->
-      <div class="project-card reveal reveal-delay-2">
-        <div class="project-header">
-          <div class="project-icon gold">⚡</div>
-          <span class="project-badge badge-finalist">Competed</span>
-        </div>
-        <div class="project-number">06 / Competitive Programming</div>
-        <h3 class="project-title">GDSC Programming Competition</h3>
+        <div class="project-num" data-en="05 / Competitive Programming" data-id="05 / Pemrograman Kompetitif">05 / Competitive Programming</div>
+        <h3 class="project-title">GDSC Contest</h3>
         <div class="project-year">2024</div>
-        <p class="project-desc">
-          Competed in Google Developer Student Clubs' internationally-attended programming event with 150+ participants. Solved complex algorithmic challenges demonstrating strong problem-solving and competitive coding skills.
-        </p>
-        <div class="project-stack">
-          <span class="stack-tag">Algorithms</span>
-          <span class="stack-tag">Data Structures</span>
-          <span class="stack-tag">Competitive Programming</span>
+        <p class="project-desc" data-en="Competed in Google Developer Student Clubs' internationally-attended programming event with 150+ participants, solving complex algorithmic challenges under time pressure." data-id="Berkompetisi dalam ajang pemrograman Google Developer Student Clubs yang dihadiri peserta internasional (150+ peserta), memecahkan tantangan algoritmik kompleks di bawah tekanan waktu.">Competed in Google Developer Student Clubs' internationally-attended programming event with 150+ participants, solving complex algorithmic challenges under time pressure.</p>
+        <div class="stack-row">
+          <span class="tag">Algorithms</span><span class="tag">Data Structures</span>
         </div>
-        <span class="project-link" style="cursor:default;opacity:0.6;">
-          Google DSC Event
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
-        </span>
-      </div>
+        <div class="project-foot">
+          <a href="project.html#gdsc" class="plink"><span data-en="Case study" data-id="Studi kasus">Case study</span>
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <span class="icon-link" style="cursor:default;">⚡ <span data-en="150+ competitors" data-id="150+ peserta">150+ competitors</span></span>
+        </div>
+      </article>
 
     </div>
   </section>
 
   <!-- EXPERIENCE -->
-  <section id="experience">
+  <section id="experience" class="wrap">
     <div class="section-head reveal">
-      <div class="section-label">// experience</div>
-      <h2 class="section-title">Where I've contributed.</h2>
-      <p class="section-desc">Organizational roles, event leadership, and community impact at ITS.</p>
+      <div class="section-label" data-en="experience" data-id="pengalaman">experience</div>
+      <h2 class="section-title" data-html data-en="Where I've <span class='grad-text'>contributed</span>." data-id="Tempat saya <span class='grad-text'>berkontribusi</span>.">Where I've <span class="grad-text">contributed</span>.</h2>
+      <p class="section-desc" data-en="Organizational roles, event leadership, and community impact at ITS." data-id="Peran organisasi, kepemimpinan acara, dan dampak komunitas di ITS.">Organizational roles, event leadership, and community impact at ITS.</p>
     </div>
 
     <div class="exp-list">
-
-      <!-- HMSI -->
       <div class="exp-item reveal">
         <div class="exp-dot">
           <svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0"/></svg>
         </div>
-        <div class="exp-content">
+        <div class="glass-card exp-content">
           <div class="exp-meta">
             <div class="exp-org">HMSI External Affairs</div>
-            <span class="exp-period">Mar 2025 – Present</span>
+            <span class="exp-period" data-en="Mar 2025 – Present" data-id="Mar 2025 – Sekarang">Mar 2025 – Present</span>
           </div>
-          <div class="exp-role">Expert Staff · External Affairs Department · ITS Surabaya</div>
+          <div class="exp-role" data-en="Expert Staff · External Affairs Department · ITS Surabaya" data-id="Staf Ahli · Departemen Hubungan Luar · ITS Surabaya">Expert Staff · External Affairs Department · ITS Surabaya</div>
           <ul class="exp-bullets">
-            <li>Served as Chief Executive for the Ormawa Visit program, overseeing all operational aspects and stakeholder coordination for visiting delegations.</li>
-            <li>Directed a team within the Event Division for the Abroad Preparation Program to facilitate international education readiness for ITS students.</li>
-            <li>Spearheaded the Consumption Division as Head for the Career Talk program, coordinating logistics for participants and speakers.</li>
+            <li data-en="Served as Chief Executive for the Ormawa Visit program, overseeing operations and stakeholder coordination for visiting delegations." data-id="Menjabat Ketua Pelaksana program Kunjungan Ormawa, mengawasi operasional dan koordinasi pemangku kepentingan untuk delegasi tamu.">Served as Chief Executive for the Ormawa Visit program, overseeing operations and stakeholder coordination for visiting delegations.</li>
+            <li data-en="Directed an Event Division team for the Abroad Preparation Program to support international education readiness for ITS students." data-id="Memimpin tim Divisi Acara untuk Abroad Preparation Program guna mendukung kesiapan pendidikan internasional mahasiswa ITS.">Directed an Event Division team for the Abroad Preparation Program to support international education readiness for ITS students.</li>
+            <li data-en="Led the Consumption Division for the Career Talk program, coordinating logistics for participants and speakers." data-id="Memimpin Divisi Konsumsi untuk program Career Talk, mengoordinasikan logistik untuk peserta dan pembicara.">Led the Consumption Division for the Career Talk program, coordinating logistics for participants and speakers.</li>
           </ul>
         </div>
       </div>
 
-      <!-- ISE! BIONIX -->
       <div class="exp-item reveal">
         <div class="exp-dot">
           <svg viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
         </div>
-        <div class="exp-content">
+        <div class="glass-card exp-content">
           <div class="exp-meta">
             <div class="exp-org">ISE! Information System Expo — BIONIX</div>
             <span class="exp-period">Mar 2024 – Oct 2025</span>
           </div>
-          <div class="exp-role">Expert Staff · BIONIX Division (IT & Business Olympiad)</div>
+          <div class="exp-role" data-en="Expert Staff · BIONIX Division (IT &amp; Business Olympiad)" data-id="Staf Ahli · Divisi BIONIX (Olimpiade IT &amp; Bisnis)">Expert Staff · BIONIX Division (IT &amp; Business Olympiad)</div>
           <ul class="exp-bullets">
-            <li>Led design and conceptual development for the Information Systems Department at BIONIX — ITS's flagship IT and Business competition with 330+ high school participants.</li>
-            <li>Served as liaison for the judging panel, ensuring smooth communication and coordination between judges and participants across all rounds.</li>
-            <li>Assisted in logistical planning and execution, handling administrative tasks contributing to the overall success of two consecutive editions.</li>
+            <li data-en="Led design and conceptual development for the Information Systems Department at BIONIX — ITS's flagship IT &amp; Business competition with 330+ high school participants." data-id="Memimpin desain dan pengembangan konsep Departemen Sistem Informasi di BIONIX — kompetisi IT &amp; Bisnis unggulan ITS dengan 330+ peserta SMA.">Led design and conceptual development for the Information Systems Department at BIONIX — ITS's flagship IT &amp; Business competition with 330+ high school participants.</li>
+            <li data-en="Served as liaison for the judging panel, ensuring smooth coordination between judges and participants across all rounds." data-id="Menjadi penghubung panel juri, memastikan koordinasi lancar antara juri dan peserta di seluruh babak.">Served as liaison for the judging panel, ensuring smooth coordination between judges and participants across all rounds.</li>
+            <li data-en="Handled logistical planning and administrative execution, contributing to the success of two consecutive editions." data-id="Menangani perencanaan logistik dan eksekusi administratif, berkontribusi pada keberhasilan dua edisi berturut-turut.">Handled logistical planning and administrative execution, contributing to the success of two consecutive editions.</li>
           </ul>
         </div>
       </div>
 
-      <!-- GERIGI ITS -->
       <div class="exp-item reveal">
         <div class="exp-dot">
           <svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
         </div>
-        <div class="exp-content">
+        <div class="glass-card exp-content">
           <div class="exp-meta">
             <div class="exp-org">GERIGI ITS 2024</div>
             <span class="exp-period">Jul 2024 – Aug 2024</span>
           </div>
-          <div class="exp-role">Staff · Consumption Division · ITS Orientation Program</div>
+          <div class="exp-role" data-en="Staff · Consumption Division · ITS Orientation Program" data-id="Staf · Divisi Konsumsi · Program Orientasi ITS">Staff · Consumption Division · ITS Orientation Program</div>
           <ul class="exp-bullets">
-            <li>Managed catering operations serving food and beverages to 6,000+ new ITS students during the orientation period.</li>
-            <li>Coordinated logistics with external vendors and team members to ensure timely and efficient distribution across the campus.</li>
+            <li data-en="Managed catering operations serving food and beverages to 6,000+ new ITS students during the orientation period." data-id="Mengelola operasi katering yang menyajikan makanan dan minuman untuk 6.000+ mahasiswa baru ITS selama masa orientasi.">Managed catering operations serving food and beverages to 6,000+ new ITS students during the orientation period.</li>
+            <li data-en="Coordinated logistics with external vendors and team members for timely distribution across campus." data-id="Mengoordinasikan logistik dengan vendor eksternal dan anggota tim untuk distribusi tepat waktu di seluruh kampus.">Coordinated logistics with external vendors and team members for timely distribution across campus.</li>
           </ul>
         </div>
       </div>
 
-      <!-- GDSC -->
       <div class="exp-item reveal">
         <div class="exp-dot">
-          <svg viewBox="0 0 24 24"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M10 20 14 4m4 4 4 4-4 4M6 16l-4-4 4-4"/></svg>
         </div>
-        <div class="exp-content">
+        <div class="glass-card exp-content">
           <div class="exp-meta">
             <div class="exp-org">Google Developer Student Clubs (GDSC) ITS</div>
             <span class="exp-period">Jan 2024 – Mar 2024</span>
           </div>
-          <div class="exp-role">Contestant · Programming Problem & Competition</div>
+          <div class="exp-role" data-en="Contestant · Programming Problem &amp; Competition" data-id="Peserta · Programming Problem &amp; Competition">Contestant · Programming Problem &amp; Competition</div>
           <ul class="exp-bullets">
-            <li>Participated in an internationally attended programming event featuring 150+ competitors, representing ITS in competitive algorithmic problem-solving.</li>
-            <li>Demonstrated strong problem-solving skills by solving complex programming challenges across multiple rounds.</li>
+            <li data-en="Participated in an internationally-attended programming event with 150+ competitors, representing ITS in competitive algorithmic problem-solving." data-id="Mengikuti ajang pemrograman berskala internasional dengan 150+ peserta, mewakili ITS dalam pemecahan masalah algoritmik kompetitif.">Participated in an internationally-attended programming event with 150+ competitors, representing ITS in competitive algorithmic problem-solving.</li>
+            <li data-en="Solved complex programming challenges across multiple rounds under time constraints." data-id="Menyelesaikan tantangan pemrograman kompleks di beberapa babak dengan batasan waktu.">Solved complex programming challenges across multiple rounds under time constraints.</li>
           </ul>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" class="skills-bg">
+  <section id="skills" class="wrap">
     <div class="section-head reveal">
-      <div class="section-label">// tech stack</div>
-      <h2 class="section-title">What I work with.</h2>
-      <p class="section-desc">Languages, frameworks, analytics tools, and design software in my daily toolkit.</p>
+      <div class="section-label" data-en="tech stack" data-id="teknologi">tech stack</div>
+      <h2 class="section-title" data-html data-en="What I <span class='grad-text'>work with</span>." data-id="Yang saya <span class='grad-text'>gunakan</span>.">What I <span class="grad-text">work with</span>.</h2>
+      <p class="section-desc" data-en="Languages, frameworks, analytics tools, and design software in my daily toolkit." data-id="Bahasa, framework, perkakas analitik, dan perangkat desain dalam keseharian saya.">Languages, frameworks, analytics tools, and design software in my daily toolkit.</p>
     </div>
 
-    <div class="skills-full-grid">
-
-      <div class="skills-group reveal">
-        <div class="skills-group-title">Programming</div>
-        <div class="skill-item-row">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="" />
-          <span class="skill-item-name">Java</span>
-        </div>
-        <div class="skill-item-row">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" />
-          <span class="skill-item-name">JavaScript</span>
-        </div>
-        <div class="skill-item-row">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" />
-          <span class="skill-item-name">Python</span>
-        </div>
-        <div class="skill-item-row">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="" />
-          <span class="skill-item-name">PHP</span>
-        </div>
-        <div class="skill-item-row">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="" />
-          <span class="skill-item-name">C#</span>
-        </div>
-        <div class="skill-item-row">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg" alt="" />
-          <span class="skill-item-name">LUA</span>
-        </div>
-        <div class="skill-item-row">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" alt="" />
-          <span class="skill-item-name">R</span>
-        </div>
-        <div class="skill-item-row">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="" />
-          <span class="skill-item-name">SQL</span>
-        </div>
+    <div class="skills-grid">
+      <div class="glass-card skills-group reveal" data-tilt>
+        <div class="skills-group-title" data-en="Programming" data-id="Pemrograman">Programming</div>
+        <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="" /><span class="skill-name">Java</span></div>
+        <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" /><span class="skill-name">JavaScript</span></div>
+        <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" /><span class="skill-name">Python</span></div>
+        <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="" /><span class="skill-name">PHP</span></div>
+        <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="" /><span class="skill-name">C#</span></div>
+        <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg" alt="" /><span class="skill-name">Lua</span></div>
+        <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" alt="" /><span class="skill-name">R</span></div>
+        <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="" /><span class="skill-name">SQL</span></div>
       </div>
 
-      <div class="skills-group reveal reveal-delay-1">
-        <div class="skills-group-title">Web & Frameworks</div>
-        <div class="skill-item-row">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="" />
-          <span class="skill-item-name">Laravel 12</span>
-        </div>
-        <div class="skill-item-row">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" />
-          <span class="skill-item-name">HTML5</span>
-        </div>
-        <div class="skill-item-row">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" />
-          <span class="skill-item-name">CSS3</span>
-        </div>
-        <div class="skill-item-row">
-          <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="" />
-          <span class="skill-item-name">Tailwind CSS</span>
-        </div>
-        <div class="skill-item-row">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="" />
-          <span class="skill-item-name">MySQL</span>
-        </div>
-        <div class="skill-item-row">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="" />
-          <span class="skill-item-name">Git & GitHub</span>
-        </div>
+      <div class="glass-card skills-group reveal d1" data-tilt>
+        <div class="skills-group-title" data-en="Web &amp; Frameworks" data-id="Web &amp; Framework">Web &amp; Frameworks</div>
+        <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="" /><span class="skill-name">React</span></div>
+        <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="" /><span class="skill-name">Node.js / Express</span></div>
+        <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="" /><span class="skill-name">Laravel 12</span></div>
+        <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" /><span class="skill-name">HTML5</span></div>
+        <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" /><span class="skill-name">CSS3</span></div>
+        <div class="skill-row"><img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="" /><span class="skill-name">Tailwind CSS</span></div>
+        <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="" /><span class="skill-name">MySQL</span></div>
+        <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="" /><span class="skill-name">Git &amp; GitHub</span></div>
       </div>
 
-      <div class="skills-group reveal reveal-delay-2">
-        <div class="skills-group-title">Analytics & BI</div>
-        <div class="skill-item-row">
-          <img src="https://cdn.simpleicons.org/tableau/E22427" alt="" />
-          <span class="skill-item-name">Tableau</span>
-        </div>
-        <div class="skill-item-row">
-          <img src="https://cdn.simpleicons.org/powerbi/F2C811" alt="" />
-          <span class="skill-item-name">Power BI</span>
-        </div>
-        <div class="skill-item-row">
-          <img src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="" />
-          <span class="skill-item-name">Microsoft Excel</span>
-        </div>
-        <div class="skill-item-row">
-          <img src="https://cdn.simpleicons.org/googlesheets/34A853" alt="" />
-          <span class="skill-item-name">Google Sheets</span>
-        </div>
+      <div class="glass-card skills-group reveal d2" data-tilt>
+        <div class="skills-group-title" data-en="Analytics &amp; BI" data-id="Analitik &amp; BI">Analytics &amp; BI</div>
+        <div class="skill-row"><img src="https://cdn.simpleicons.org/tableau/E22427" alt="" /><span class="skill-name">Tableau</span></div>
+        <div class="skill-row"><img src="https://cdn.simpleicons.org/powerbi/F2C811" alt="" /><span class="skill-name">Power BI</span></div>
+        <div class="skill-row"><img src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="" /><span class="skill-name">Microsoft Excel</span></div>
+        <div class="skill-row"><img src="https://cdn.simpleicons.org/googlesheets/34A853" alt="" /><span class="skill-name">Google Sheets</span></div>
       </div>
 
-      <div class="skills-group reveal reveal-delay-3">
-        <div class="skills-group-title">Design & Creative</div>
-        <div class="skill-item-row">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="" />
-          <span class="skill-item-name">Figma</span>
-        </div>
-        <div class="skill-item-row">
-          <img src="https://cdn.simpleicons.org/canva/00C4CC" alt="" />
-          <span class="skill-item-name">Canva</span>
-        </div>
-        <div class="skill-item-row">
-          <img src="https://cdn.simpleicons.org/capcut/FFFFFF" alt="" style="border-radius:4px;background:#222;" />
-          <span class="skill-item-name">CapCut</span>
-        </div>
-        <div class="skill-item-row" style="border-bottom:none;">
-          <span style="width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;">🎨</span>
-          <span class="skill-item-name">Ibis Paint X</span>
-        </div>
+      <div class="glass-card skills-group reveal d3" data-tilt>
+        <div class="skills-group-title" data-en="Design &amp; Creative" data-id="Desain &amp; Kreatif">Design &amp; Creative</div>
+        <div class="skill-row"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="" /><span class="skill-name">Figma</span></div>
+        <div class="skill-row"><img src="https://www.google.com/s2/favicons?domain=canva.com&amp;sz=64" alt="" /><span class="skill-name">Canva</span></div>
+        <div class="skill-row"><img src="https://www.google.com/s2/favicons?domain=capcut.com&amp;sz=64" alt="" /><span class="skill-name">CapCut</span></div>
+        <div class="skill-row"><img src="https://www.google.com/s2/favicons?domain=ibispaint.com&amp;sz=64" alt="" /><span class="skill-name">Ibis Paint X</span></div>
       </div>
-
     </div>
   </section>
 
   <!-- AWARDS -->
-  <section id="awards">
+  <section id="awards" class="wrap">
     <div class="section-head reveal">
-      <div class="section-label">// achievements</div>
-      <h2 class="section-title">Recognition & awards.</h2>
+      <div class="section-label" data-en="achievements" data-id="pencapaian">achievements</div>
+      <h2 class="section-title" data-html data-en="Recognition &amp; <span class='grad-text'>awards</span>." data-id="Pengakuan &amp; <span class='grad-text'>penghargaan</span>.">Recognition &amp; <span class="grad-text">awards</span>.</h2>
     </div>
 
     <div class="awards-grid">
-      <div class="award-card reveal">
+      <div class="glass-card award-card reveal" data-tilt>
         <div class="award-icon">🥇</div>
-        <div class="award-body">
-          <div class="award-title">1st Place — Game Application Development</div>
+        <div>
+          <div class="award-title" data-en="1st Place — Game Application Development" data-id="Juara 1 — Pengembangan Aplikasi Game">1st Place — Game Application Development</div>
           <div class="award-event">ISCOM (Information System Competition) 2024</div>
           <div class="award-year">2024</div>
         </div>
       </div>
-      <div class="award-card reveal reveal-delay-1">
+      <div class="glass-card award-card reveal d1" data-tilt>
         <div class="award-icon">🏅</div>
-        <div class="award-body">
-          <div class="award-title">Internal ITS Finalist</div>
+        <div>
+          <div class="award-title" data-en="Internal ITS Finalist" data-id="Finalis Internal ITS">Internal ITS Finalist</div>
           <div class="award-event">GEMASTIK 2024 — Game Application Development</div>
           <div class="award-year">2024</div>
         </div>
       </div>
-      <div class="award-card reveal reveal-delay-2">
+      <div class="glass-card award-card reveal d2" data-tilt>
         <div class="award-icon">🎓</div>
-        <div class="award-body">
-          <div class="award-title">Advanced English Certification</div>
+        <div>
+          <div class="award-title" data-en="Advanced English Certification" data-id="Sertifikasi Bahasa Inggris Tingkat Lanjut">Advanced English Certification</div>
           <div class="award-event">LBA LIA Jakarta — Advanced Level English Course</div>
           <div class="award-year">2020 – 2023</div>
         </div>
       </div>
-      <div class="award-card reveal reveal-delay-3">
-        <div class="award-icon">🤖</div>
-        <div class="award-body">
-          <div class="award-title">ICHIRO Robotics Club Member</div>
-          <div class="award-event">One of the best robotics groups at ITS</div>
-          <div class="award-year">2023 – Present</div>
+      <div class="glass-card award-card reveal d3" data-tilt>
+        <div class="award-icon">🥋</div>
+        <div>
+          <div class="award-title" data-en="Taekwondo Practitioner" data-id="Praktisi Taekwondo">Taekwondo Practitioner</div>
+          <div class="award-event" data-en="Extensive training &amp; competition practice" data-id="Latihan intensif &amp; praktik kompetisi">Extensive training &amp; competition practice</div>
+          <div class="award-year">2020 – Present</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="contact-bg">
-    <div class="contact-inner reveal">
-      <div class="section-label">// contact</div>
-      <h2 class="section-title">Let's build something.</h2>
-      <p class="section-desc">
-        Open to internships, freelance projects, collaborations, and conversations about tech, data, or game dev. Based in Surabaya · Originally from Jakarta.
-      </p>
+  <section id="contact" class="wrap">
+    <div class="glass-card contact-card reveal">
+      <div class="section-label" data-en="contact" data-id="kontak">contact</div>
+      <h2 class="section-title" data-html data-en="Let's build <span class='grad-text'>something</span>." data-id="Mari bangun <span class='grad-text'>sesuatu</span>.">Let's build <span class="grad-text">something</span>.</h2>
+      <p class="section-desc" data-en="Open to internships, freelance projects, collaborations, and conversations about tech, data, or game dev. Based in Surabaya · originally from Jakarta." data-id="Terbuka untuk magang, proyek freelance, kolaborasi, dan obrolan seputar teknologi, data, atau game dev. Berdomisili di Surabaya · asal Jakarta.">Open to internships, freelance projects, collaborations, and conversations about tech, data, or game dev. Based in Surabaya · originally from Jakarta.</p>
       <div class="contact-links">
         <a href="mailto:fadhiilhamizan2004@gmail.com" class="contact-link primary">
           <svg viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           fadhiilhamizan2004@gmail.com
         </a>
-        <a href="https://linkedin.com/in/fadhiil-akmal-hamizan/" target="_blank" class="contact-link">
+        <a href="assets/Fadhiil-Akmal-Hamizan-CV.pdf" download class="contact-link">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          <span data-en="Download CV" data-id="Unduh CV">Download CV</span>
+        </a>
+        <a href="https://linkedin.com/in/fadhiil-akmal-hamizan/" target="_blank" rel="noopener" class="contact-link">
           <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
           LinkedIn
         </a>
-        <a href="https://github.com/fadhiilhamizan" target="_blank" class="contact-link">
+        <a href="https://github.com/fadhiilhamizan" target="_blank" rel="noopener" class="contact-link">
           <svg viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
           GitHub
         </a>
@@ -1653,31 +649,15 @@
         </a>
       </div>
     </div>
+
+    <footer>
+      <div class="footer-text" data-html data-en="© 2026 Fadhiil Akmal Hamizan · Built with <em>♥</em> and liquid glass" data-id="© 2026 Fadhiil Akmal Hamizan · Dibuat dengan <em>♥</em> dan liquid glass">© 2026 Fadhiil Akmal Hamizan · Built with <em>♥</em> and liquid glass</div>
+      <a href="#top" class="to-top"><span data-en="Back to top" data-id="Kembali ke atas">Back to top</span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+      </a>
+    </footer>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-left">© 2026 Fadhiil Akmal Hamizan</div>
-    <div class="footer-right">ITS Surabaya · Jakarta, Indonesia</div>
-  </footer>
-
-  <script>
-    const revealEls = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.08 });
-    revealEls.forEach(el => observer.observe(el));
-
-    // Run immediately for above-fold
-    revealEls.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight) el.classList.add('visible');
-    });
-  </script>
+  <script src="assets/site.js" defer></script>
 </body>
 </html>
